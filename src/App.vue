@@ -8,6 +8,8 @@
 
 <script>
 
+import './assets/css/global.css'
+
 import Header from './template/Header.vue'
 import Main from './template/Main.vue'
 import Footer from './template/Footer.vue'
@@ -20,11 +22,8 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
