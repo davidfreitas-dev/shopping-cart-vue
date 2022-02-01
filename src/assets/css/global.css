@@ -21,3 +21,118 @@ html, body {
     width: 100%;
     height:100%;
 }
+
+.wrapper {
+	padding: 1rem;
+}
+
+.bg-white {
+	background: #fff !important;
+}
+
+.bg-secondary {
+	background: var(--secondary) !important;
+}
+
+.bg-main {
+	color: #fff;
+	background: var(--main) !important;
+}
+
+.text-main {
+	color: var(--main) !important;
+}
+
+.btn-main {
+	color: #fff !important;
+	font-weight: 600;
+	background: var(--main) !important;
+	border: 4px solid var(--main) !important;
+	border-radius: 5px;
+}
+
+.btn-main-outline {
+	background: transparent !important;
+	color: var(--main) !important;
+	border: 1px solid var(--main) !important;
+}
+
+.btn-secondary-outline {
+	background: transparent !important;
+	color: var(--dark) !important;
+	border: 2px solid var(--dark) !important;
+}
+
+.section-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.section-info h3 {
+	font-size: 2rem;
+	color: #333;
+}
+
+.section-info p {
+	color: #505050;
+	line-height: 1.3rem;
+}
+
+.section-desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: .85rem 0;
+}
+
+.section-desc span {
+	padding: .3rem;
+}
+
+.section-desc a {
+	color: var(--dark);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.section-desc a:hover {
+	color: var(--main);
+}
+
+.page-banner-desc {
+	padding: 2rem;
+}
+
+@media only screen and (min-width: 960px) {
+	.wrapper {
+		width: 95%;
+		margin: auto;
+	}
+
+	.wrapper .full-screen {
+		width: 100%;
+	}
+
+    .section-info h3 {
+      font-size: 2rem;
+    }
+
+    .section-info p {
+      font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1124px) {
+	.wrapper {
+		width: 80%;
+		margin: auto;
+	}
+
+	.wrapper.full-screen {
+		width: 100%;
+	}
+}
