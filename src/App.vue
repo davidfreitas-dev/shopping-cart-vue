@@ -7,9 +7,6 @@
 </template>
 
 <script>
-
-import './assets/css/global.css'
-
 import Header from './template/Header.vue'
 import Main from './template/Main.vue'
 import Footer from './template/Footer.vue'
