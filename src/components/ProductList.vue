@@ -9,7 +9,7 @@
 
 				<div class="product-grid">
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/amd.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>
@@ -21,7 +21,7 @@
 					</div>
 
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/intel.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>
@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/placa-mae.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>
@@ -45,7 +45,7 @@
 					</div>
 
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/kitgamer.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>
@@ -57,7 +57,7 @@
 					</div>
 
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/gabinete.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/kitgamer.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>
@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="product">
-						<div class="product-img" style="background-image: url('../assets/img/ssd-nvme.png')"></div>
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/gabinete.png') + ')' }"></div>
 						<div class="product-desc">
 							<h3>Product Title</h3>
 							<p>Description Lorem ipsum dolor</p>

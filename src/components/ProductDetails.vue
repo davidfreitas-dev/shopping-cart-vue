@@ -12,10 +12,10 @@
 				<div class="swiper gallery-top">
 					<div class="swiper-wrapper">
 						<swiper ref="mySwiper" :options="galleryTop">
-							<swiper-slide class="swiper-slide" style="background-image:url(img/intel.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/memoria.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/placa-mae.png)"></swiper-slide>					
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>					
 						</swiper>
 					</div>
 				</div>
@@ -23,28 +23,24 @@
 				<div class="swiper gallery-thumbs">
 					<div class="swiper-wrapper">
 						<swiper ref="mySwiper" :options="galleryThumbs">
-							<swiper-slide class="swiper-slide" style="background-image:url(img/intel.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/memoria.png)"></swiper-slide>
-							<swiper-slide class="swiper-slide" style="background-image:url(img/placa-mae.png)"></swiper-slide>					
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
+							<swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>					
 						</swiper>
 					</div>
 				</div>
-
 			</div>
 
 			<div class="wrapper product-description">
 				<h3>Intel Kit Setup</h3>
-
 				<p>
 					<small class="sale bg-main">SALE</small>
 					<span class="price text-main">$2.500</span>
 				</p>
-
 				<p class="short-describe">
 					Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales.
 				</p>
-
 				<div class="product-action-button small">
 					<div class="quantity-controls">
 						<button>-</button>
