@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import Swiper from './Swiper.vue'
+import Swiper from './SimilarProducts.vue'
 
 export default {
 	components: { Swiper }
