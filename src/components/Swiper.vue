@@ -1,106 +1,136 @@
 <template>
-    <section >
+    <section>
         <div class="wrapper">
             <div class="similar-products">
                 <h3>Similar Products</h3>
-
                 <div class="swiper similar-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="" class="text-main">View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                    <swiper ref="mySwiper" :options="swiperOptions">
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </swiper-slide>
 
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/kitgamer.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="product.html" class="text-main">
-                                        View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </swiper-slide>
 
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/gabinete.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="product.html" class="text-main">
-                                        View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </swiper-slide>
 
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/placa-mae.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="product.html" class="text-main">
-                                        View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </swiper-slide>
 
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/intel.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="product.html" class="text-main">
-                                        View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </swiper-slide>
 
-                        <div class="swiper-slide">
-                            <div class="product">
-                                <div class="product-img"  style="background-image: url('img/amd.png')"></div>
-                                <div class="product-desc">
-                                    <h3>Product Title</h3>
-                                    <p>Description Lorem ipsum dolor</p>
-                                    <a href="product.html" class="text-main">
-                                        View details 
-                                        <span class="ti-arrow-right"></span>
-                                    </a>
+                        <swiper-slide>
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-desc">
+                                        <h3>Product Title</h3>
+                                        <p>Description Lorem ipsum dolor</p>
+                                        <a href="" class="text-main">View details 
+                                            <span class="ti-arrow-right"></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>			
-                    </div>
+                        </swiper-slide>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                    </swiper>
                 </div>
             </div>
-        </div>
+        </div>        
     </section>
 </template>
 
 <script>
-export default {
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 
+export default {
+    components: {
+        Swiper,
+        SwiperSlide
+    },
+    data() {
+        return {
+            swiperOptions: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+
+                breakpoints: {
+                    768: { slidesPerView: 3 },
+                    960: { slidesPerView: 4 }
+                },
+
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            }
+        }
+    }
 }
 </script>
 
@@ -134,5 +164,4 @@ export default {
             margin-top: 2rem;
         }
     }
-
 </style>
