@@ -11,19 +11,23 @@
 			<div class="product-images wrapper">
 				<div class="swiper gallery-top">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide" style="background-image:url(img/intel.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/memoria.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/placa-mae.png)"></div>					
+						<swiper ref="mySwiper" :options="galleryTop">
+							<swiper-slide class="swiper-slide" style="background-image:url(img/intel.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/memoria.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/placa-mae.png)"></swiper-slide>					
+						</swiper>
 					</div>
 				</div>
 
 				<div class="swiper gallery-thumbs">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide" style="background-image:url(img/intel.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/memoria.png)"></div>
-						<div class="swiper-slide" style="background-image:url(img/placa-mae.png)"></div>
+						<swiper ref="mySwiper" :options="galleryThumbs">
+							<swiper-slide class="swiper-slide" style="background-image:url(img/intel.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/ssd-nvme.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/memoria.png)"></swiper-slide>
+							<swiper-slide class="swiper-slide" style="background-image:url(img/placa-mae.png)"></swiper-slide>					
+						</swiper>
 					</div>
 				</div>
 
@@ -97,7 +101,7 @@
 			</div>
 		</section>
 
-		<Swiper />
+		<SimilarProducts />
 
 		<section class="mobile-contact-section bg-secondary">
 			<div class="wrapper">
@@ -118,14 +122,56 @@
 			</div>
 		</section>
 	</main>
-
 </template>
 
 <script>
-import Swiper from './SimilarProducts.vue'
+import SimilarProducts from './SimilarProducts.vue'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 
 export default {
-	components: { Swiper }
+	components: {
+		SimilarProducts,
+        Swiper,
+        SwiperSlide
+    },
+    data() {
+        return {
+            galleryThumbs: {
+                spaceBetween: 10,
+				slidesPerView: 4,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				direction: 'horizontal'
+            },
+			galleryTop: {
+                spaceBetween: 10,
+				thumbs: {
+					swiper: this.galleryThumbs
+				}
+            }
+        }
+    },
+	methods: {
+		changeDirection(x) {
+			if (x.matches) {
+				this.galleryThumbs =  {
+					spaceBetween: 10,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					direction: 'vertical',
+				}
+			}
+		}
+	},
+	created() {
+		let x = window.matchMedia("(min-width: 768px)");
+		this.changeDirection(x);
+		x.addListener(this.changeDirection);
+	}
 }
 </script>
 
@@ -233,6 +279,7 @@ export default {
 		padding: .3rem 1.3rem;
 		text-transform: uppercase;
 		font-size: 1rem;
+		cursor: pointer;
 	}
 
 	.additional-info {
