@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import SimilarProducts from './SimilarProducts.vue'
+import SimilarProducts from './ProductDetailsImages.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 

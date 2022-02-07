@@ -19,7 +19,7 @@
 					<form action="">
 						<div class="cart-item">						
 							<div class="cart-product">
-								<div class="cart-image" style="background-image:url(img/intel.png)"></div>
+								<div class="cart-image" :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></div>
 								<div class="cart-product-info">
 									<p class="cart-product-name">Intel Core i5 9th Gen</p>
 									<p class="cart-price-sm">$1.250</p>
@@ -53,7 +53,7 @@
 
 						<div class="cart-item">						
 							<div class="cart-product">
-								<div class="cart-image" style="background-image:url(img/amd.png)"></div>
+								<div class="cart-image" :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></div>
 								<div class="cart-product-info">
 									<p class="cart-product-name">AMD Ryzen 5 2400G</p>
 									<p class="cart-price-sm">$1.250</p>
@@ -87,7 +87,7 @@
 
 						<div class="cart-item">						
 							<div class="cart-product">
-								<div class="cart-image" style="background-image:url(img/ssd-nvme.png)"></div>
+								<div class="cart-image" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
 								<div class="cart-product-info">
 									<p class="cart-product-name">SSD NVME Corsair</p>
 									<p class="cart-price-sm">$1.250</p>
@@ -121,7 +121,7 @@
 
 						<div class="cart-item">						
 							<div class="cart-product">
-								<div class="cart-image" style="background-image:url(img/kitgamer.png)"></div>
+								<div class="cart-image" :style="{ backgroundImage: 'url(' + require('@/assets/img/kitgamer.png') + ')' }"></div>
 								<div class="cart-product-info">
 									<p class="cart-product-name">Kit Mouse, Teclado e Headset Gamer</p>
 									<p class="cart-price-sm">$1.250</p>
