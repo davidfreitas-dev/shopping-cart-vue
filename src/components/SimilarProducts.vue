@@ -8,7 +8,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
@@ -23,7 +23,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
@@ -38,7 +38,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
@@ -53,7 +53,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/memoria.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
@@ -68,7 +68,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
@@ -83,7 +83,7 @@
                         <swiper-slide>
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img"  style="background-image: url('img/ssd-nvme.png')"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/gabinete.png') + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
