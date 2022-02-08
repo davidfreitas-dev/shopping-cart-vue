@@ -1,107 +1,27 @@
 <template>
-    <section>
-        <div class="wrapper">
-            <div class="similar-products">
-                <h3>Similar Products</h3>
-                <div class="swiper similar-swiper">
-                    <swiper ref="mySwiper" :options="swiperOptions">
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
+    <div class="product-images wrapper">
+        <div class="swiper gallery-top">
+            <div class="swiper-wrapper">
+                <swiper ref="mySwiper" :options="galleryTop">
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>					
+                </swiper>
+            </div>
+        </div>
 
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/memoria.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/gabinete.png') + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>Product Title</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-
-                        <div class="swiper-button-prev" slot="button-prev"></div>
-                        <div class="swiper-button-next" slot="button-next"></div>
-                    </swiper>
-                </div>
+        <div class="swiper gallery-thumbs">
+            <div class="swiper-wrapper">
+                <swiper ref="mySwiper" :options="galleryThumbs">
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
+                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>
+                </swiper>
             </div>
         </div>        
-    </section>
+    </div>
 </template>
 
 <script>
@@ -115,47 +35,108 @@ export default {
     },
     data() {
         return {
-            swiperOptions: {
-                spaceBetween: 20,
-                slidesPerView: 2,
-
-                breakpoints: {
-                    768: { slidesPerView: 3 },
-                    960: { slidesPerView: 4 }
-                },
-
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                }
+            galleryThumbs: {
+                spaceBetween: 10,
+				slidesPerView: 4,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				direction: 'horizontal'
+            },
+			galleryTop: {
+                spaceBetween: 10,
+				thumbs: {
+					swiper: this.galleryThumbs
+				}
             }
         }
-    }
+    },
+	methods: {
+		changeDirection(x) {
+			if (x.matches) {
+				this.galleryThumbs =  {
+					spaceBetween: 10,
+					slidesPerView: 4,
+					freeMode: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					direction: 'vertical',
+				}
+			}
+		}
+	},
+	created() {
+		let x = window.matchMedia("(min-width: 768px)")
+        x.addEventListener("change", () => {
+            this.changeDirection(x);
+        })
+	}
 }
 </script>
 
 <style>
-	.similar-products {
-		padding-bottom: 1.5rem;
-	}
+	.product-images.wrapper {
+        padding: 0rem;
+    }
 
-	.similar-products h3 {
-		margin-bottom: 1.8rem;
-		color: #333;
-	}
+    .gallery-top {
+        width: 100%;
+        height: 50vh;
+    }
 
-	.swiper-button-next:after,
-	.swiper-button-prev:after {
-		font-size: .75rem;
-		padding: .5rem .7rem;
-		border-radius: 100%;
-		background: var(--main);
-		color: #fff;
-	}
+    .gallery-thumbs {
+        width: 100%;
+        height: 15vh;
+        padding: .5rem;
+    }
 
-    @media only screen and (min-width: 1124px) {
-        .similar-products {
-            margin-top: 2rem;
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+    }
+
+    .gallery-thumbs .swiper-slide {
+        width: 25%;
+    }
+
+    .gallery-thumbs .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+    @media only screen and (min-width: 768px){
+		.product-images.wrapper {
+            padding: 1rem;
+            padding-top: 0rem;
+        }
+
+        .product-images {
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+
+        .gallery-top {
+            height: 75vh;
+            margin-top: 0;
+            order: 1;
+        }
+
+        .gallery-thumbs {		
+            padding: 0rem .5rem;
+            height: 75vh;
+            order: 0;
+        }
+
+        .gallery-thumbs .swiper-slide {
+            width: 100% !important;
+            height: 25%;
         }
     }
+
+    @media only screen and (min-width: 1124px) {
+		.product-images.wrapper, 
+		.wrapper.product-description {
+			width: 100%;
+		}
+	}
 </style>
