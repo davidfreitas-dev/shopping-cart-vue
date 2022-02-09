@@ -1,26 +1,15 @@
 <template>
     <div class="product-images wrapper">
-        <div class="swiper gallery-top">
-            <div class="swiper-wrapper">
-                <swiper ref="mySwiper" :options="galleryTop">
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>					
-                </swiper>
-            </div>
-        </div>
-
-        <div class="swiper gallery-thumbs">
-            <div class="swiper-wrapper">
-                <swiper ref="mySwiper" :options="galleryThumbs">
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></swiper-slide>
-                    <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>
-                </swiper>
-            </div>
-        </div>        
+        <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>
+        </swiper>
+        <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>	
+        </swiper>
     </div>
 </template>
 
@@ -35,108 +24,68 @@ export default {
     },
     data() {
         return {
-            galleryThumbs: {
+            swiperOptionTop: {
+                loop: true,
+                loopedSlides: 3, // looped slides should be the same
                 spaceBetween: 10,
-				slidesPerView: 4,
-				freeMode: true,
-				watchSlidesVisibility: true,
-				watchSlidesProgress: true,
-				direction: 'horizontal'
             },
-			galleryTop: {
+            swiperOptionThumbs: {
+                loop: true,
+                loopedSlides: 3, // looped slides should be the same
                 spaceBetween: 10,
-				thumbs: {
-					swiper: this.galleryThumbs
-				}
+                centeredSlides: true,
+                slidesPerView: 3,
+                touchRatio: 0.2,
+                slideToClickedSlide: true,
             }
         }
     },
-	methods: {
-		changeDirection(x) {
-			if (x.matches) {
-				this.galleryThumbs =  {
-					spaceBetween: 10,
-					slidesPerView: 4,
-					freeMode: true,
-					watchSlidesVisibility: true,
-					watchSlidesProgress: true,
-					direction: 'vertical',
-				}
-			}
-		}
-	},
-	created() {
-		let x = window.matchMedia("(min-width: 768px)")
-        x.addEventListener("change", () => {
-            this.changeDirection(x);
+    mounted() {
+        this.$nextTick(() => {
+            const swiperTop = this.$refs.swiperTop.$swiper
+            const swiperThumbs = this.$refs.swiperThumbs.$swiper
+            swiperTop.controller.control = swiperThumbs
+            swiperThumbs.controller.control = swiperTop
         })
-	}
+    }
 }
 </script>
 
-<style>
-	.product-images.wrapper {
-        padding: 0rem;
-    }
-
-    .gallery-top {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .gallery-thumbs {
-        width: 100%;
-        height: 15vh;
-        padding: .5rem;
+<style scoped>
+    .product-images {
+        height: 60vh;
     }
 
     .swiper-slide {
-        background-size: cover;
+        background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         border-radius: 10px;
+    }
+
+    .gallery-top {
+        height: 75%;
+        width: 100%;
+    }
+
+    .gallery-thumbs {
+        height: 25%;
+        box-sizing: border-box;
+        margin-top: .5rem;
+        padding: 0;
     }
 
     .gallery-thumbs .swiper-slide {
         width: 25%;
+        height: 100%;
     }
-
-    .gallery-thumbs .swiper-slide-thumb-active {
+    .gallery-thumbs .swiper-slide-active {
         opacity: 1;
     }
 
-    @media only screen and (min-width: 768px){
-		.product-images.wrapper {
-            padding: 1rem;
-            padding-top: 0rem;
-        }
-
+    @media only screen and (min-width: 768px) {
         .product-images {
-            display: grid;
-            grid-template-columns: 20% 80%;
-        }
-
-        .gallery-top {
-            height: 75vh;
-            margin-top: 0;
-            order: 1;
-        }
-
-        .gallery-thumbs {		
-            padding: 0rem .5rem;
-            height: 75vh;
-            order: 0;
-        }
-
-        .gallery-thumbs .swiper-slide {
-            width: 100% !important;
-            height: 25%;
+            height: 85vh;
         }
     }
-
-    @media only screen and (min-width: 1124px) {
-		.product-images.wrapper, 
-		.wrapper.product-description {
-			width: 100%;
-		}
-	}
 </style>

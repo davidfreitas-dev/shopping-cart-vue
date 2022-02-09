@@ -1,14 +1,6 @@
 <template>
 	<main>
-		<section class="page-banner bg-secondary">
-			<div class="wrapper page-banner-desc">
-				<h1>Product Details</h1>
-				<div><span class="text-main">Home</span> / <span>product-details</span></div>
-			</div>
-		</section>
-
-		<div class="product-detail-grid">
-			
+		<div class="product-detail-grid">			
 			<ProductDetailsImages />
 
 			<div class="wrapper product-description">
@@ -213,6 +205,7 @@ export default {
 		font-size: 1.5rem;
 		padding: .7rem 0rem;
 		margin-bottom: .8rem;
+		margin-top: 1rem;
 	}
 
 	.long-describe p {
@@ -220,7 +213,7 @@ export default {
 		font-size: .9rem;	
 		line-height: 1.5rem;
 		margin-top: .85rem;
-		margin-bottom: .3rem;
+		margin-bottom: .75rem;
 	}
 
 	@media only screen and (min-width: 768px){		
@@ -231,18 +224,11 @@ export default {
 
 	@media only screen and (min-width: 960px) {			
 		.product-detail-grid {
-			padding-top: 1rem;
-		}
-
-	}
-
-	@media only screen and (min-width: 1124px) {
-		.product-detail-grid {
 			display: grid;
-			grid-template-columns: 65% 35%;
-			width: 80%;
-			padding-top: 1rem;
+			grid-template-columns: 55% 45%;
+			width: 95%;
 			margin: auto;
+			padding-top: 1rem;
 		}
 
 		.product-images.wrapper, 
@@ -253,6 +239,16 @@ export default {
 		.wrapper.product-description {
 			display: block !important;
 			margin-top: 0;
+		}
+	}
+
+	@media only screen and (min-width: 1124px) {
+		.product-detail-grid {
+			display: grid;
+			grid-template-columns: 55% 45%;
+			width: 80%;
+			margin: auto;
+			padding-top: 1rem;
 		}
 
 		.product-description h3 {
