@@ -1,12 +1,5 @@
 <template>
-  <main>
-		<section class="page-banner bg-secondary">
-			<div class="wrapper page-banner-desc">
-				<h1>Shopping Cart</h1>
-				<div><span class="text-main">Home</span> / <span>cart</span></div>
-			</div>
-		</section>
-
+	<main>
 		<div class="product-cart">
 			<div class="wrapper">
 				<div class="cart-collection">

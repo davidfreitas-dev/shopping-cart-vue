@@ -140,7 +140,7 @@ export default {
 	}
 
 	.similar-products h3 {
-		margin-bottom: 1.8rem;
+		margin-bottom: .85rem;
 		color: #333;
 	}
 

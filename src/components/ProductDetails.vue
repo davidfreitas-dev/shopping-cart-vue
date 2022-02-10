@@ -5,10 +5,17 @@
 
 			<div class="wrapper product-description">
 				<h3>Intel Kit Setup</h3>
-				<p>
+				<div class="stars">
+					<span class="star-icon full">☆</span>
+					<span class="star-icon full">☆</span>
+					<span class="star-icon full">☆</span>
+					<span class="star-icon half">☆</span>
+					<span class="star-icon">☆</span>
+				</div>
+				<div class="sale-info">
 					<small class="sale bg-main">SALE</small>
 					<span class="price text-main">$2.500</span>
-				</p>
+				</div>
 				<p class="short-describe">
 					Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales.
 				</p>
@@ -22,7 +29,7 @@
 					<div class="tocart-control">
 						<button class="btn-main">
 							<span class="ti-shopping-cart"></span>
-							Add to cart
+							Buy Now
 						</button>
 					</div>
 				</div>
@@ -37,7 +44,7 @@
 					<div class="tocart-control">
 						<button class="btn-main">
 							<span class="ti-shopping-cart"></span>
-							Add to cart
+							Buy Now
 						</button>
 					</div>
 				</div>
@@ -45,6 +52,8 @@
 				<div class="additional-info">
 					<span>Status: <strong>In Stock</strong></span>
 					<span>Quantity: <strong>35</strong></span>
+					<span>Category: <strong>Hardware</strong></span>
+					<span>Code Product: <strong>0125</strong></span>
 				</div>
 			</div>
 		</div>
@@ -58,9 +67,6 @@
 					</p>
 
 					<p>Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales, dictumst facilisis eros id donec lacus, semper lectus curabitur tristique blandit malesuada. risus quisque praesent nisi praesent netus elementum purus molestie. 
-					</p>
-
-					<p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
 					</p>
 
 					<br>
@@ -107,12 +113,22 @@ export default {
 	.product-detail-grid {
 		padding-top: 1rem;
 	}
+
+	.product-description {
+		margin: .5rem;
+	}
 	
 	.product-description h3 {
-		font-size: 1.5rem;
+		font-size: 2.3rem !important;
 		margin-bottom: .7rem;
 		color: #333;
 		text-transform: capitalize;
+	}
+
+	.product-description .sale-info {
+		display: flex;
+		justify-content: start;
+		align-items: center;
 	}
 
 	.product-description .sale {
@@ -192,8 +208,10 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
+		font-size: 1rem;
+		line-height: 1.7rem;
 		color: #505050;
-		padding-top: 1.5rem;
+		padding-top: 1.85rem;
 	}
 
 	.long-describe {
@@ -216,9 +234,51 @@ export default {
 		margin-bottom: .75rem;
 	}
 
+	.stars {
+		margin-bottom: .7rem;
+	}
+
+	.star-icon {
+		color: #ddd;
+		font-size: 1.5rem;
+		position: relative;
+		cursor: pointer;
+	}
+	.star-icon.full:before {
+		text-shadow: 0 0 2px rgba(0,0,0,0.7);
+		color: #FDE16D;
+		content: '\2605'; /* Full star in UTF-8 */
+		position: absolute;
+		left: 0;
+	}
+	.star-icon.half:before {
+		text-shadow: 0 0 2px rgba(0,0,0,0.7);
+		color: #FDE16D;
+		content: '\2605'; /* Full star in UTF-8 */
+		position: absolute;
+		left: 0;
+		width: 50%;
+		overflow: hidden;
+	}
+
+	@-moz-document url-prefix() { /* Firefox Hack :( */
+		.star-icon {
+			font-size: 50px;
+			line-height: 34px;
+		}
+
+		.additional-info {
+			font-size: 1.1rem;
+		}
+	}
+
 	@media only screen and (min-width: 768px){		
 		.product-detail-grid {
 			padding-top: 1rem;
+		}
+
+		.star-icon {
+			font-size: 1.8rem;
 		}
 	}
 
