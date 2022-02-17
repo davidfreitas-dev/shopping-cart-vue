@@ -276,6 +276,7 @@ export default {
   }
 
   .cart-total p {
+    margin-top: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
   }

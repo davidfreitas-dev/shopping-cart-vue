@@ -12,7 +12,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
@@ -27,7 +27,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
@@ -42,7 +42,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
@@ -57,7 +57,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
@@ -72,7 +72,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
@@ -87,7 +87,7 @@
                                     <div class="product-desc">
                                         <h3>Product Title</h3>
                                         <p>Description Lorem ipsum dolor</p>
-                                        <a href="" class="text-main">View details 
+                                        <a href="#" class="text-main">View details 
                                             <span class="ti-arrow-right"></span>
                                         </a>
                                     </div>
