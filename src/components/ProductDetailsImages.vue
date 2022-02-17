@@ -26,12 +26,12 @@ export default {
         return {
             swiperOptionTop: {
                 loop: true,
-                loopedSlides: 3, // looped slides should be the same
+                loopedSlides: 3,
                 spaceBetween: 10,
             },
             swiperOptionThumbs: {
                 loop: true,
-                loopedSlides: 3, // looped slides should be the same
+                loopedSlides: 3,
                 spaceBetween: 10,
                 centeredSlides: true,
                 slidesPerView: 3,

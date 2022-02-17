@@ -2,7 +2,6 @@
 	<main>
 		<div class="product-detail-grid">			
 			<ProductDetailsImages />
-
 			<div class="wrapper product-description">
 				<h3>Intel Kit Setup</h3>
 				<div class="stars">
@@ -25,7 +24,6 @@
 						<input type="number" value="1" readonly="">
 						<button>+</button>
 					</div>
-
 					<div class="tocart-control">
 						<button class="btn-main">
 							<span class="ti-shopping-cart"></span>
@@ -33,14 +31,12 @@
 						</button>
 					</div>
 				</div>
-
 				<div class="product-action-button large">
 					<div class="quantity-controls">
 						<button>-</button>
 						<input type="number" value="1" readonly="">
 						<button>+</button>
 					</div>
-
 					<div class="tocart-control">
 						<button class="btn-main">
 							<span class="ti-shopping-cart"></span>
@@ -48,7 +44,6 @@
 						</button>
 					</div>
 				</div>
-
 				<div class="additional-info">
 					<span>Status: <strong>In Stock</strong></span>
 					<span>Quantity: <strong>35</strong></span>
@@ -57,54 +52,35 @@
 				</div>
 			</div>
 		</div>
-
 		<section class="long-description">
 			<div class="wrapper">
 				<div class="long-describe">
 					<h3>Description</h3>
-
-					<p>Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales, dictumst facilisis eros id donec lacus, semper lectus curabitur tristique blandit malesuada. risus quisque praesent nisi praesent netus elementum purus molestie, condimentum leo et lobortis pulvinar. 
+					<p>
+						Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales, dictumst facilisis eros id donec lacus, semper lectus curabitur tristique blandit malesuada. risus quisque praesent nisi praesent netus elementum purus molestie, condimentum leo et lobortis pulvinar. 
 					</p>
-
-					<p>Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales, dictumst facilisis eros id donec lacus, semper lectus curabitur tristique blandit malesuada. risus quisque praesent nisi praesent netus elementum purus molestie. 
+					<p>
+						Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales, dictumst facilisis eros id donec lacus, semper lectus curabitur tristique blandit malesuada. risus quisque praesent nisi praesent netus elementum purus molestie. 
 					</p>
-
 					<br>
 				</div>
 			</div>
 		</section>
-
 		<SimilarProducts />
-
-		<section class="mobile-contact-section bg-secondary">
-			<div class="wrapper">
-				<div class="section-info">					
-					<h2>About</h2>
-
-					<div class="section-desc">
-						<span>Developed By <a href="https://davidfreitas.dev.br/">David Freitas</a></span>
-						<span>See on <a href="#">Github</a></span>
-					</div>
-					
-					<div class="mobile-social-links">
-						<span class="ti-linkedin"></span>
-						<span class="ti-github"></span>
-						<span class="ti-twitter-alt"></span>
-					</div>
-				</div>				
-			</div>
-		</section>
+		<About />
 	</main>
 </template>
 
 <script>
 import SimilarProducts from './SimilarProducts.vue'
 import ProductDetailsImages from './ProductDetailsImages.vue'
+import About from './template/About.vue'
 
 export default {
 	components: {
 		SimilarProducts,
-		ProductDetailsImages
+		ProductDetailsImages,
+		About
     }
 }
 </script>
@@ -265,10 +241,6 @@ export default {
 		.star-icon {
 			font-size: 50px;
 			line-height: 34px;
-		}
-
-		.additional-info {
-			font-size: 1.1rem;
 		}
 	}
 

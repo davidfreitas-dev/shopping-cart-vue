@@ -5,7 +5,6 @@
 				<div class="brand">
 					<h2>Shopname</h2>
 				</div>
-
 				<div>
 					<ul class="nav-list">
 						<li class="nav-item">
@@ -17,7 +16,6 @@
 						</li>
 					</ul>
 				</div>
-
 				<div class="cart">
 					<a href="cart.html"><span class="ti-shopping-cart"></span></a>
 					<span class="cart-count"><span class="text-main">10</span></span>					

@@ -153,39 +153,23 @@
 						<p>Total:</p>
 						<p>$1.250</p>
 					</div>
-
 					<div class="cart-action-button">
-						<a href="index.html">Continue Shopping</a>
-						<a href="checkout.html" class="btn-main">Proceed to Checkout</a>
+						<a>Continue Shopping</a>
+						<a class="btn-main">Proceed to Checkout</a>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<section class="mobile-contact-section bg-secondary">
-			<div class="wrapper">
-				<div class="section-info">					
-					<h2>About</h2>
-
-					<div class="section-desc">
-						<span>Developed By <a href="https://davidfreitas.dev.br/">David Freitas</a></span>
-						<span>See on <a href="#">Github</a></span>
-					</div>
-					
-					<div class="mobile-social-links">
-						<span class="ti-linkedin"></span>
-						<span class="ti-github"></span>
-						<span class="ti-twitter-alt"></span>
-					</div>
-				</div>				
-			</div>
-		</section>
+		<About />
 	</main>
 </template>
 
 <script>
+import About from './template/About.vue'
 export default {
-
+  components: {
+    About,
+  },
 }
 </script>
 

@@ -1,12 +1,11 @@
 <template>
-  <main>
+	<main>
 		<div class="wrapper">
 			<section class="best-sellers" id="best-sellers">
 				<div class="section-info">
 					<h3>Best Products</h3>
 					<hr class="separator">
 				</div>
-
 				<div class="product-grid">
 					<div class="product">
 						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
@@ -82,31 +81,16 @@
 				</div>
 			</section>			
 		</div>
-		
-		<section class="mobile-contact-section bg-secondary">
-			<div class="wrapper">
-				<div class="section-info">					
-					<h2>About</h2>
-
-					<div class="section-desc">
-						<span>Developed By <a href="https://davidfreitas.dev.br/">David Freitas</a></span>
-						<span>See on <a href="#">Github</a></span>
-					</div>
-					
-					<div class="mobile-social-links">
-						<span class="ti-linkedin"></span>
-						<span class="ti-github"></span>
-						<span class="ti-twitter-alt"></span>
-					</div>
-				</div>				
-			</div>
-		</section>
+		<About />
 	</main>
 </template>
 
 <script>
+import About from './template/About.vue'
 export default {
-
+	components: {
+		About,
+	},
 }
 </script>
 
@@ -157,12 +141,6 @@ export default {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: bold;
-  }
-
-  .mobile-social-links span {
-    font-size: 1.3rem;
-    margin: 0rem .5rem;
-    color: var(--main);
   }
 
   @media only screen and (min-width: 768px) {
