@@ -1,0 +1,36 @@
+// objeto contendo todos os produtos
+const products = [
+    { id: 1, name: 'Processor Intel Core i5 8th Gen', image: 'proc-intel.jpg', price: 1200.00 },
+    { id: 2, name: 'Processor Amd Ryzen 5 2400G', image: 'proc-amd.jpg', price: 900.00 },
+    { id: 3, name: 'Corsair SSD M.2 NVME 256GB', image: 'ssd-corsair.jpg', price: 300.00 },
+    { id: 4, name: 'Motherboard ASUS H310M', image: 'motherboard.jpg', price: 450.00 },
+    { id: 5, name: 'Kingston Hyper X RAM Memory 8GB', image: 'ram-memory.jpg', price: 200.00 },
+    { id: 6, name: 'Personal Gamer Computer', image: 'gamer-pc.jpg', price: 3500.00 },
+]
+
+// 1 - Criar um o objeto 'products' no state
+// 2 - Criar um getter no state para obter os produtos
+// 3 - Listar os produtos nas páginas
+
+const cart = [
+    { 
+        id: 1, 
+        products: [
+            { id: 2 },
+            { id: 4 },
+            { id: 5 },
+        ] 
+    },
+    { 
+        id: 2, 
+        products: [
+            { id: 1 },
+            { id: 3 },
+            { id: 6 },
+        ] 
+    },
+]
+
+// 1 - Criar um o objeto 'cart' no state
+// 2 - Criar um getter no state para obter os produtos do carrinho
+// 3 - Listar os produtos na página do carrinho
