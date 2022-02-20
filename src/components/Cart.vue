@@ -70,11 +70,8 @@ export default {
   },
   computed: {
     cart() {
-      return this.$store.getters.getCart
+      return this.$store.state.cart
     }
-  },
-  created() {
-    console.log(this.cart)
   },
 }
 </script>

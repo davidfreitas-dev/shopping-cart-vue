@@ -1,3 +1,4 @@
-// 1 - Criar um o objeto 'cart' no state
-// 2 - Criar um getter no state para obter os produtos do carrinho
-// 3 - Listar os produtos na página do carrinho
+1. Calcular Total do Produto
+2. Calcular Total do Carrinho
+3. Carregar detalhes do produto passando Id na URL
+4. Inserção do produto no carrinho
