@@ -1,14 +1,14 @@
 <template>
     <div class="product-images wrapper">
         <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-intel.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-amd.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-corsair.png') + ')' }"></swiper-slide>
         </swiper>
         <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></swiper-slide>	
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-intel.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-amd.png') + ')' }"></swiper-slide>
+            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-corsair.png') + ')' }"></swiper-slide>	
         </swiper>
     </div>
 </template>
