@@ -22,7 +22,7 @@
               <div class="cart-quantity-md">
                 <div class="cart-quantity-controls">
                   <button>-</button>
-                  <input type="number" value="1" readonly />
+                  <input type="number" :value="product.qty" readonly />
                   <button>+</button>
                 </div>
               </div>
@@ -30,7 +30,7 @@
                 <h4>${{ product.price }}</h4>
               </div>
               <div class="cart-product-total">
-                <h4>$1.250</h4>
+                <h4>${{ product.total }}</h4>
               </div>
               <div class="cart-controls-sm">
                 <div class="remove">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="cart-quantity-controls-sm">
                   <button>-</button>
-                  <input type="number" value="1" readonly />
+                  <input type="number" :value="product.qty" readonly />
                   <button>+</button>
                 </div>
               </div>
@@ -49,7 +49,7 @@
 				<div class="cart-total-holder">
 					<div class="cart-total">
 						<p>Total:</p>
-						<p>$1.250</p>
+						<p>${{ cartTotal }}</p>
 					</div>
 					<div class="cart-action-button">
 						<a>Continue Shopping</a>
@@ -68,11 +68,29 @@ export default {
   components: {
     About,
   },
+  data() {
+    return {
+      
+    }
+  },
   computed: {
     cart() {
       return this.$store.state.cart
+    },
+    cartTotal() {
+      return this.$store.getters.cartTotal
     }
   },
+  methods: {
+    productTotal() {
+      this.cart[0].products.map(item => {
+          item.total = item.qty * item.price
+      })
+    },
+  },
+  created() {
+    this.productTotal()
+  }
 }
 </script>
 
@@ -141,7 +159,11 @@ export default {
     font-weight: bold;
     font-size: 1.1rem;
     color: #505050;
-    margin-left: .3rem;
+  }
+
+  .cart-quantity-controls-sm input,
+  .cart-quantity-controls input {
+    margin-left: .7rem;
   }
 
   .cart-quantity-controls-sm button,
@@ -149,6 +171,7 @@ export default {
     background: var(--main);
     color: #fff;
     border-radius: 50%;
+    margin: 0;
   }
 
   .cart-product-name {
