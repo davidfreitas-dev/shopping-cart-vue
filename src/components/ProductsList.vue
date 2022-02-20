@@ -7,77 +7,17 @@
 					<hr class="separator">
 				</div>
 				<div class="product-grid">
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-nvme.png') + ')' }"></div>
+					<div class="product" v-for="(product, i) in products" :key="i">
+						<div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.image}`) + ')' }"></div>
 						<div class="product-desc">
-							<h3>Product Title</h3>
+							<h3>{{ product.name }}</h3>
 							<p>Description Lorem ipsum dolor</p>
 							<a href="#" class="text-main">
 								View details 
 								<span class="ti-arrow-right"></span>
 							</a>
 						</div>
-					</div>
-
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/amd.png') + ')' }"></div>
-						<div class="product-desc">
-							<h3>Product Title</h3>
-							<p>Description Lorem ipsum dolor</p>
-							<a href="#" class="text-main">
-								View details 
-								<span class="ti-arrow-right"></span>
-							</a>
-						</div>
-					</div>
-
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/intel.png') + ')' }"></div>
-						<div class="product-desc">
-							<h3>Product Title</h3>
-							<p>Description Lorem ipsum dolor</p>
-							<a href="#" class="text-main">
-								View details 
-								<span class="ti-arrow-right"></span>
-							</a>
-						</div>
-					</div>
-
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/placa-mae.png') + ')' }"></div>
-						<div class="product-desc">
-							<h3>Product Title</h3>
-							<p>Description Lorem ipsum dolor</p>
-							<a href="#" class="text-main">
-								View details 
-								<span class="ti-arrow-right"></span>
-							</a>
-						</div>
-					</div>
-
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/kitgamer.png') + ')' }"></div>
-						<div class="product-desc">
-							<h3>Product Title</h3>
-							<p>Description Lorem ipsum dolor</p>
-							<a href="#" class="text-main">
-								View details 
-								<span class="ti-arrow-right"></span>
-							</a>
-						</div>
-					</div>
-
-					<div class="product">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require('@/assets/img/gabinete.png') + ')' }"></div>
-						<div class="product-desc">
-							<h3>Product Title</h3>
-							<p>Description Lorem ipsum dolor</p>
-							<a href="#" class="text-main">
-								View details 
-								<span class="ti-arrow-right"></span>
-							</a>
-						</div>
-					</div>
+					</div>					
 				</div>
 			</section>			
 		</div>
@@ -91,6 +31,11 @@ export default {
 	components: {
 		About,
 	},
+	computed: {
+		products() {
+			return this.$store.state.products
+		}
+	}
 }
 </script>
 
