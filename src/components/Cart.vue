@@ -33,7 +33,7 @@
                 <h4>{{ product.total | formatValue }}</h4>
               </div>
               <div class="cart-controls-sm">
-                <div class="remove">
+                <div class="remove" @click="removeItemCart(product.id)">
                   <span class="ti-trash"></span> Remove
                 </div>
                 <div class="cart-quantity-controls-sm">
@@ -87,6 +87,10 @@ export default {
     reduceItemQty(itemId) {
       this.$store.commit('reduceItemQty', itemId)
       this.setTotalItem()
+    },
+    removeItemCart(productId) {
+      console.log('Produto: ' + productId + ' removido!')
+      this.$store.commit('removeItemCart', productId)
     },
     cleanCart() {
 

@@ -48,6 +48,11 @@ export default new Vuex.Store({
             state.cart[0].products.map(item => {
                 item.total = item.qty * item.price
             })
+        },
+        removeItemCart(state, productId) {
+            state.cart[0].products = state.cart[0].products.filter(p => {
+                return p.id != productId
+            })
         }
     }
 })
