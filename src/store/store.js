@@ -39,7 +39,7 @@ export default new Vuex.Store({
         },
         reduceItemQty(state, itemId) {
             state.cart[0].products.filter(item => {
-                if (item.id == itemId && item.qty > 0) {
+                if (item.id == itemId && item.qty > 1) {
                     item.qty--
                 }
             })

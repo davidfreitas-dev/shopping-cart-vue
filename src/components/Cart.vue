@@ -17,6 +17,9 @@
                   <p class="cart-product-name">{{ product.name }}</p>
                   <p class="cart-price-sm">{{ product.price | formatValue }}</p>
                   <small>x {{ product.qty }}</small>
+                  <div class="remove" @click="removeItemCart(product.id)">
+                    <span class="ti-trash"></span> Remove
+                  </div>
                 </div>
               </div>
               <div class="cart-quantity-md">
@@ -33,7 +36,7 @@
                 <h4>{{ product.total | formatValue }}</h4>
               </div>
               <div class="cart-controls-sm">
-                <div class="remove" @click="removeItemCart(product.id)">
+                <div class="remove-sm" @click="removeItemCart(product.id)">
                   <span class="ti-trash"></span> Remove
                 </div>
                 <div class="cart-quantity-controls-sm">
@@ -44,8 +47,7 @@
               </div>
             </div>
           </template>
-				</div>
-				
+				</div>				
 				<div class="cart-total-holder">
 					<div class="cart-total">
 						<p>Total:</p>
@@ -148,10 +150,15 @@ export default {
     padding: .8rem;
   }
 
-  .remove {
+  .remove-sm {
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
     color: var(--main);
+  }
+
+  .remove{
+    display: none;
   }
 
   .cart-quantity-controls-sm {
@@ -184,6 +191,7 @@ export default {
     color: #fff;
     border-radius: 50%;
     margin: 0;
+    cursor: pointer;
   }
 
   .cart-product-name {
@@ -333,6 +341,14 @@ export default {
 
     .cart-price-sm {
       display: none;
+    }
+
+    .remove {
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--main);
     }
   }
 </style>

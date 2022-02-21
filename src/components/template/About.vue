@@ -24,9 +24,14 @@ export default {
 </script>
 
 <style>
-  .mobile-social-links span {
-    font-size: 1.3rem;
-    margin: 0rem .5rem;
-    color: var(--main);
-  }
+    .mobile-social-links span {
+        font-size: 1.3rem;
+        margin: 0rem .5rem;
+        color: var(--dark);
+        cursor: pointer;
+    }
+
+    .mobile-social-links span:hover {
+        color: var(--main);
+    }
 </style>

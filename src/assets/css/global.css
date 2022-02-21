@@ -95,7 +95,7 @@ html, body {
 }
 
 .section-desc a {
-	color: var(--dark);
+	color: #191919;
 	font-weight: bold;
 	cursor: pointer;
 }
