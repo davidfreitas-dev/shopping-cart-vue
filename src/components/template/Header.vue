@@ -8,7 +8,7 @@
 				<div>
 					<ul class="nav-list">
 						<li class="nav-item">
-							<a href="#" class="nav-link">Home</a>
+              <router-link to="/" class="nav-link">Home</router-link>
 							<a href="#" class="nav-link">Products</a>
 							<a href="#" class="nav-link">Promos</a>
 							<a href="#" class="nav-link">About</a>
@@ -17,7 +17,7 @@
 					</ul>
 				</div>
 				<div class="cart">
-					<a href="cart.html"><span class="ti-shopping-cart"></span></a>
+          <router-link to="/cart"><span class="ti-shopping-cart"></span></router-link>
 					<span class="cart-count"><span class="text-main">{{ cartQtyItems }}</span></span>					
 				</div>			
 			</nav>

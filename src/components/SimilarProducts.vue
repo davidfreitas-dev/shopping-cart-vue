@@ -8,7 +8,7 @@
                         <swiper-slide v-for="(product, i) in products" :key="i">
                             <div class="swiper-slide">
                                 <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.image}`) + ')' }"></div>
+                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
                                     <div class="product-desc">
                                         <h3>{{ product.name }}</h3>
                                         <p>Description Lorem ipsum dolor</p>
