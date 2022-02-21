@@ -1,9 +1,9 @@
 <template>
 	<main>
-		<div class="product-detail-grid">			
-			<ProductDetailsImages />
+		<div class="product-detail-grid" v-for="(detail, i) in product" :key="i">			
+			<ProductDetailsImages :image-url="detail.imageURL"/>
 			<div class="wrapper product-description">
-				<h3>Intel Kit Setup</h3>
+				<h3>{{ detail.name }}</h3>
 				<div class="stars">
 					<span class="star-icon full">☆</span>
 					<span class="star-icon full">☆</span>
@@ -13,7 +13,7 @@
 				</div>
 				<div class="sale-info">
 					<small class="sale bg-main">SALE</small>
-					<span class="price text-main">$2.500</span>
+					<span class="price text-main">{{ detail.price | formatValue }}</span>
 				</div>
 				<p class="short-describe">
 					Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales.
@@ -83,10 +83,12 @@ export default {
 			id: this.$route.params.id
 		}
 	},
-	watch: {
-		// $route(to, from) {
-		// 	this.id = to.params.id
-		// }
+	computed: {
+		product() {
+			return this.$store.state.products.filter(p => {
+				return p.id == this.id
+			})
+		}
 	}
 }
 </script>
