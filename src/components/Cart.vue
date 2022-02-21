@@ -15,7 +15,7 @@
                 <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
                 <div class="cart-product-info">
                   <p class="cart-product-name">{{ product.name }}</p>
-                  <p class="cart-price-sm">${{ product.price }}</p>
+                  <p class="cart-price-sm">{{ product.price | formatValue }}</p>
                   <small>x {{ product.qty }}</small>
                 </div>
               </div>
@@ -27,10 +27,10 @@
                 </div>
               </div>
               <div class="cart-unit-price">
-                <h4>${{ product.price }}</h4>
+                <h4>{{ product.price | formatValue }}</h4>
               </div>
               <div class="cart-product-total">
-                <h4>${{ product.total }}</h4>
+                <h4>{{ product.total | formatValue }}</h4>
               </div>
               <div class="cart-controls-sm">
                 <div class="remove">
@@ -49,7 +49,7 @@
 				<div class="cart-total-holder">
 					<div class="cart-total">
 						<p>Total:</p>
-						<p>${{ cartTotal }}</p>
+						<p>{{ cartTotal | formatValue }}</p>
 					</div>
 					<div class="cart-action-button">
 						<a @click="cleanCart">Clean Cart</a>

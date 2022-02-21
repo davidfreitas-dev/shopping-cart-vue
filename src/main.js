@@ -6,6 +6,10 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+Vue.filter('formatValue', function(value) {
+  return value.toLocaleString('en-US',{style: 'currency', currency: 'USD'})
+})
+
 new Vue({
   store,
   router,
