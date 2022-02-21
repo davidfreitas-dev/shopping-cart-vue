@@ -15,7 +15,6 @@ export default new Vuex.Store({
         ],
         cart: [
             {
-                id: null,
                 products: [
                     { id: 1, name: 'Processor Intel Core i5 8th Gen', imageURL: 'proc-intel.png', qty: 2, price: 1200.00 },
                     { id: 3, name: 'Corsair SSD M.2 NVME 256GB', imageURL: 'ssd-corsair.png', qty: 1, price: 300.00 },
@@ -25,9 +24,30 @@ export default new Vuex.Store({
         ]
     },
     getters: {
-        cartTotal(state) {
-            return state.cart[0].products.map(i => i.qty * i.price)
+        cartTotal(state) {  
+            return state.cart[0].products.map(item => item.qty * item.price)
                 .reduce((total, current) => total + current, 0)
         },
+    },
+    mutations: {
+        addItemQty(state, itemId) {
+            state.cart[0].products.filter(item => {
+                if (item.id == itemId) {
+                    item.qty++
+                }
+            })
+        },
+        reduceItemQty(state, itemId) {
+            state.cart[0].products.filter(item => {
+                if (item.id == itemId && item.qty > 0) {
+                    item.qty--
+                }
+            })
+        },
+        setTotalItem(state) {
+            state.cart[0].products.map(item => {
+                item.total = item.qty * item.price
+            })
+        }
     }
 })

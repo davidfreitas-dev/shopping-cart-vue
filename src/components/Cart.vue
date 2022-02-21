@@ -15,15 +15,15 @@
                 <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
                 <div class="cart-product-info">
                   <p class="cart-product-name">{{ product.name }}</p>
-                  <p class="cart-price-sm">{{ product.price }}</p>
-                  <small>x 1</small>
+                  <p class="cart-price-sm">${{ product.price }}</p>
+                  <small>x {{ product.qty }}</small>
                 </div>
               </div>
               <div class="cart-quantity-md">
                 <div class="cart-quantity-controls">
-                  <button>-</button>
+                  <button @click="reduceItemQty(product.id)">-</button>
                   <input type="number" :value="product.qty" readonly />
-                  <button>+</button>
+                  <button @click="addItemQty(product.id)">+</button>
                 </div>
               </div>
               <div class="cart-unit-price">
@@ -37,9 +37,9 @@
                   <span class="ti-trash"></span> Remove
                 </div>
                 <div class="cart-quantity-controls-sm">
-                  <button>-</button>
+                  <button @click="reduceItemQty(product.id)">-</button>
                   <input type="number" :value="product.qty" readonly />
-                  <button>+</button>
+                  <button @click="addItemQty(product.id)">+</button>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@
 						<p>${{ cartTotal }}</p>
 					</div>
 					<div class="cart-action-button">
-						<a>Continue Shopping</a>
+						<a @click="cleanCart">Clean Cart</a>
 						<a class="btn-main">Proceed to Checkout</a>
 					</div>
 				</div>
@@ -68,11 +68,6 @@ export default {
   components: {
     About,
   },
-  data() {
-    return {
-      
-    }
-  },
   computed: {
     cart() {
       return this.$store.state.cart
@@ -82,19 +77,32 @@ export default {
     }
   },
   methods: {
-    productTotal() {
-      this.cart[0].products.map(item => {
-          item.total = item.qty * item.price
-      })
+    setTotalItem() {
+      this.$store.commit('setTotalItem')
     },
+    addItemQty(itemId) {
+      this.$store.commit('addItemQty', itemId)
+      this.setTotalItem()
+    },
+    reduceItemQty(itemId) {
+      this.$store.commit('reduceItemQty', itemId)
+      this.setTotalItem()
+    },
+    cleanCart() {
+
+    }
   },
   created() {
-    this.productTotal()
+    this.setTotalItem()
   }
 }
 </script>
 
-<style>
+<style scoped>
+  .btn-main {
+    font-size: 1rem !important;
+  }
+
   .product-cart {
     margin-top: 1rem;
   }
@@ -140,7 +148,7 @@ export default {
   .remove {
     font-weight: bold;
     text-transform: uppercase;
-    color: #505050;
+    color: var(--main);
   }
 
   .cart-quantity-controls-sm {
@@ -163,7 +171,8 @@ export default {
 
   .cart-quantity-controls-sm input,
   .cart-quantity-controls input {
-    margin-left: .7rem;
+    margin: 0;
+    width: 40px;
   }
 
   .cart-quantity-controls-sm button,
@@ -311,6 +320,16 @@ export default {
     .cart-action-button a:first-child {
       margin-right: 1.2rem;
       order: 0;
+    }
+
+    .cart-quantity-controls-sm input,
+    .cart-quantity-controls input {
+      margin-left: .85rem;
+      width: 45px;
+    }
+
+    .cart-price-sm {
+      display: none;
     }
   }
 </style>

@@ -18,7 +18,7 @@
 				</div>
 				<div class="cart">
 					<a href="cart.html"><span class="ti-shopping-cart"></span></a>
-					<span class="cart-count"><span class="text-main">10</span></span>					
+					<span class="cart-count"><span class="text-main">{{ cartQtyItems }}</span></span>					
 				</div>			
 			</nav>
 		</div>
@@ -27,7 +27,11 @@
 
 <script>
 export default {
-
+  computed: {
+    cartQtyItems() {
+      return this.$store.state.cart[0].products.length 
+    }
+  },
 }
 </script>
 
@@ -91,7 +95,7 @@ export default {
   }
 
   .cart-count span {
-    padding: 0 3px;
+    padding: 0 5px;
     border-radius: 100%;
     color: #fff !important;
     background-color: var(--main);
