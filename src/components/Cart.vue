@@ -89,7 +89,6 @@ export default {
       this.setTotalItem()
     },
     removeItemCart(productId) {
-      console.log('Produto: ' + productId + ' removido!')
       this.$store.commit('removeItemCart', productId)
     },
     cleanCart() {
