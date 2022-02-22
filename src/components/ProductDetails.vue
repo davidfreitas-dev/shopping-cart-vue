@@ -25,7 +25,7 @@
 						<button @click="qty++">+</button>
 					</div>
 					<div class="tocart-control">
-						<button class="btn-main">
+						<button class="btn-main" @click="addToCart">
 							<span class="ti-shopping-cart"></span>
 							Buy Now
 						</button>
@@ -38,7 +38,7 @@
 						<button @click="qty++">+</button>
 					</div>
 					<div class="tocart-control">
-						<button class="btn-main">
+						<button class="btn-main" @click="addToCart">
 							<span class="ti-shopping-cart"></span>
 							Buy Now
 						</button>
@@ -90,7 +90,14 @@ export default {
 				return p.id == this.id
 			})
 		}
-	}
+	},
+	methods: {
+		addToCart() {
+			let product = this.product[0]
+			product.qty = this.qty
+			this.$store.commit('addToCart', product)
+		}
+	},
 }
 </script>
 
@@ -168,11 +175,13 @@ export default {
 	.quantity-controls button:first-child {
 		border-right: 2px solid #ccc;
 		font-size: 1.4rem;
+		cursor: pointer;
 	}
 
 	.quantity-controls button:last-child {
 		border-left: 2px solid #ccc;
 		font-size: 1.4rem;
+		cursor: pointer;
 	}
 
 	.tocart-control {
