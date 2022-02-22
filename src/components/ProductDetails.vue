@@ -20,9 +20,9 @@
 				</p>
 				<div class="product-action-button small">
 					<div class="quantity-controls">
-						<button>-</button>
-						<input type="number" value="1" readonly="">
-						<button>+</button>
+						<button @click="qty--">-</button>
+						<input type="number" v-model="qty" readonly="">
+						<button @click="qty++">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main">
@@ -33,9 +33,9 @@
 				</div>
 				<div class="product-action-button large">
 					<div class="quantity-controls">
-						<button>-</button>
-						<input type="number" value="1" readonly="">
-						<button>+</button>
+						<button @click="qty--">-</button>
+						<input type="number" v-model="qty" readonly="">
+						<button @click="qty++">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main">
@@ -80,7 +80,8 @@ export default {
     },
 	data() {
 		return {
-			id: this.$route.params.id
+			id: this.$route.params.id,
+			qty: 1
 		}
 	},
 	computed: {
