@@ -102,6 +102,7 @@ export default {
     },
     removeItemCart(productId) {
       this.$store.commit('removeItemCart', productId)
+      this.loadData()
     },
     cleanCart() {
 
