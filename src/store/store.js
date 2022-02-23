@@ -40,11 +40,6 @@ export default new Vuex.Store({
                 }
             })
         },
-        setTotalItem(state) {
-            state.cart[0].products.map(item => {
-                item.total = item.qty * item.price
-            })
-        },
         addToCart(state, product) {
             state.cart[0].products.push(product)
         },

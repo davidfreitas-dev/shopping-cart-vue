@@ -30,10 +30,10 @@
                 </div>
               </div>
               <div class="cart-unit-price">
-                <h4>{{ product.price | formatValue }}</h4>
+                <h4>{{ product.price }}</h4>
               </div>
               <div class="cart-product-total">
-                <h4>{{ product.total | formatValue }}</h4>
+                <h4>{{ product.total }}</h4>
               </div>
               <div class="cart-controls-sm">
                 <div class="remove-sm" @click="removeItemCart(product.id)">
@@ -51,7 +51,7 @@
 				<div class="cart-total-holder">
 					<div class="cart-total">
 						<p>Total:</p>
-						<p>{{ cartTotal | formatValue }}</p>
+						<p>{{ cartTotal }}</p>
 					</div>
 					<div class="cart-action-button">
 						<a @click="cleanCart">Clean Cart</a>
@@ -70,25 +70,31 @@ export default {
   components: {
     About,
   },
-  computed: {
-    cart() {
-      return this.$store.state.cart
-    },
-    cartTotal() {
-      return this.$store.getters.cartTotal
+  data() {
+    return {
+      cart: null,
+      cartTotal: null
     }
   },
   methods: {
-    setTotalItem() {
-      this.$store.commit('setTotalItem')
+    loadData() {
+      this.cart = this.$store.state.cart
+      this.cartTotal = this.$store.getters.cartTotal
+      this.calcTotalItem()
+    },
+    calcTotalItem() {
+      this.cart[0].products.map(p => {
+        const totalItem = p.qty * p.price
+        this.$set(p, 'total', totalItem)
+      })
     },
     addItemQty(itemId) {
       this.$store.commit('addItemQty', itemId)
-      this.setTotalItem()
+      this.loadData()
     },
     reduceItemQty(itemId) {
       this.$store.commit('reduceItemQty', itemId)
-      this.setTotalItem()
+      this.loadData()
     },
     removeItemCart(productId) {
       this.$store.commit('removeItemCart', productId)
@@ -98,7 +104,7 @@ export default {
     }
   },
   created() {
-    this.setTotalItem()
+    this.loadData()
   }
 }
 </script>
