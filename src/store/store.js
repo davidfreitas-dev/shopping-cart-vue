@@ -35,7 +35,13 @@ export default new Vuex.Store({
             })
         },
         addToCart(state, product) {
-            state.cart[0].products.push(product)
+            const itemCartExists = state.cart[0].products.filter(p => {
+                return p.id == product.id
+            })
+            if (itemCartExists.length)
+                console.log('Este produto já está no carrinho!')
+            else
+                state.cart[0].products.push(product)
         },
         removeItemCart(state, productId) {
             state.cart[0].products = state.cart[0].products.filter(p => {
