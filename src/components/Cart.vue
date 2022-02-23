@@ -58,7 +58,7 @@
 						<p>{{ cartTotal | formatValue }}</p>
 					</div>
 					<div class="cart-action-button">
-						<a @click="cleanCart">Clean Cart</a>
+						<router-link to="/">Continue Shopping</router-link>
 						<a class="btn-main">Proceed to Checkout</a>
 					</div>
 				</div>
@@ -107,9 +107,6 @@ export default {
     removeItemCart(productId) {
       this.$store.commit('removeItemCart', productId)
       this.loadData()
-    },
-    cleanCart() {
-
     }
   },
   created() {

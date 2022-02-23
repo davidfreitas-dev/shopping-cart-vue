@@ -3,7 +3,7 @@
 		<div class="nav-header">
 			<nav>
 				<div class="brand">
-					<h2>Shopname</h2>
+					<router-link to="/">Shopname</router-link>
 				</div>
 				<div>
 					<ul class="nav-list">
@@ -60,7 +60,9 @@ export default {
     box-shadow: 0px 10px 9px -7px rgba(0,0,0,0.25);
   }
 
-  .brand {
+  .brand a{
+    color: var(--dark);
+    font-size: 1.5rem;
     font-weight: 700;
   }
 

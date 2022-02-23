@@ -1,1 +1,1 @@
-1. Limpar carrinho
+1. Criar action para validar se o produto ja esxiste no crrinho, se sim apenas alterar a quantidade

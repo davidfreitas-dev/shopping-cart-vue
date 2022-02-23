@@ -20,9 +20,9 @@
 				</p>
 				<div class="product-action-button small">
 					<div class="quantity-controls">
-						<button @click="qty--">-</button>
+						<button @click="reduceItemQty">-</button>
 						<input type="number" v-model="qty" readonly="">
-						<button @click="qty++">+</button>
+						<button @click="addItemQty">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main" @click="addToCart">
@@ -33,9 +33,9 @@
 				</div>
 				<div class="product-action-button large">
 					<div class="quantity-controls">
-						<button @click="qty--">-</button>
+						<button @click="reduceItemQty">-</button>
 						<input type="number" v-model="qty" readonly="">
-						<button @click="qty++">+</button>
+						<button @click="addItemQty">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main" @click="addToCart">
@@ -92,11 +92,19 @@ export default {
 		}
 	},
 	methods: {
+		addItemQty() {
+            this.qty++
+        },
+        reduceItemQty() {
+            if (this.qty > 1) {
+                this.qty--
+            }
+        },
 		addToCart() {
 			let product = this.product[0]
 			product.qty = this.qty
 			this.$store.commit('addToCart', product)
-			// this.$router.push('/cart')
+			this.$router.push('/cart')
 		}
 	},
 }
