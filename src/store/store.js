@@ -19,12 +19,6 @@ export default new Vuex.Store({
             }
         ]
     },
-    getters: {
-        cartTotal(state) {  
-            return state.cart[0].products.map(item => item.qty * item.price)
-                .reduce((total, current) => total + current, 0)
-        },
-    },
     mutations: {
         addItemQty(state, itemId) {
             state.cart[0].products.filter(item => {

@@ -79,14 +79,18 @@ export default {
   methods: {
     loadData() {
       this.cart = this.$store.state.cart
-      this.cartTotal = this.$store.getters.cartTotal
       this.calcTotalItem()
+      this.calcTotalCart()
     },
     calcTotalItem() {
       this.cart[0].products.map(p => {
         const totalItem = p.qty * p.price
         this.$set(p, 'total', totalItem)
       })
+    },
+    calcTotalCart() {  
+      this.cartTotal = this.cart[0].products.map(item => item.qty * item.price)
+        .reduce((total, current) => total + current, 0)
     },
     addItemQty(itemId) {
       this.$store.commit('addItemQty', itemId)
