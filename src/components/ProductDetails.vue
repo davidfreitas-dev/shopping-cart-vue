@@ -96,6 +96,7 @@ export default {
 			let product = this.product[0]
 			product.qty = this.qty
 			this.$store.commit('addToCart', product)
+			// this.$router.push('/cart')
 		}
 	},
 }

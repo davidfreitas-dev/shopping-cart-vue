@@ -12,9 +12,13 @@
           <template v-for="item in cart">
             <div class="cart-item" v-for="(product, i) in item.products" :key="i">						
               <div class="cart-product">
-                <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
+                <router-link :to="`product/${product.id}`">
+                  <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
+                </router-link>
                 <div class="cart-product-info">
-                  <p class="cart-product-name">{{ product.name }}</p>
+                  <router-link :to="`product/${product.id}`">
+                    <p class="cart-product-name">{{ product.name }}</p>
+                  </router-link>
                   <p class="cart-price-sm">{{ product.price | formatValue }}</p>
                   <small>x {{ product.qty }}</small>
                   <div class="remove" @click="removeItemCart(product.id)">
