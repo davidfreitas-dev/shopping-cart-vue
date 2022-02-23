@@ -30,10 +30,10 @@
                 </div>
               </div>
               <div class="cart-unit-price">
-                <h4>{{ product.price }}</h4>
+                <h4>{{ product.price | formatValue }}</h4>
               </div>
               <div class="cart-product-total">
-                <h4>{{ product.total }}</h4>
+                <h4>{{ product.total | formatValue }}</h4>
               </div>
               <div class="cart-controls-sm">
                 <div class="remove-sm" @click="removeItemCart(product.id)">
@@ -51,7 +51,7 @@
 				<div class="cart-total-holder">
 					<div class="cart-total">
 						<p>Total:</p>
-						<p>{{ cartTotal }}</p>
+						<p>{{ cartTotal | formatValue }}</p>
 					</div>
 					<div class="cart-action-button">
 						<a @click="cleanCart">Clean Cart</a>

@@ -8,15 +8,15 @@
 				</div>
 				<div class="product-grid">
 					<div class="product" v-for="(product, i) in products" :key="i">
-						<div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
-						<div class="product-desc">
-							<h3>{{ product.name }}</h3>
-							<p>Description Lorem ipsum dolor</p>							
-							<router-link :to="`product/${product.id}`" class="text-main">View details 
-								<span class="ti-arrow-right"></span>
-							</router-link>
-						</div>
-					</div>					
+            <router-link :to="`product/${product.id}`">
+              <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
+              <div class="product-desc">
+                <h3>{{ product.name }}</h3>
+                <p>Description Lorem ipsum dolor</p>
+                <h3 class="text-main">{{ product.price | formatValue }}</h3>
+              </div>
+            </router-link>
+					</div>
 				</div>
 			</section>			
 		</div>
@@ -72,12 +72,22 @@ export default {
   .product-desc h3 {
     color: #333;
     font-size: 1.1rem;
+    padding: 0 .5rem;
+    text-transform: capitalize;
+    margin-bottom: .2rem;
+  }
+
+  .product-desc h4 {
+    color: var(--main);
+    font-size: 1rem;
     text-transform: capitalize;
     margin-bottom: .2rem;
   }
 
   .product-desc p {
+    color: #333;
     font-size: .8rem;
+    padding: 0 .5rem;
     margin-bottom: .2rem;
   }
 
