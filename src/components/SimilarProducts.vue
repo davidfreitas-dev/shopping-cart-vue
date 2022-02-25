@@ -7,16 +7,7 @@
                     <swiper ref="mySwiper" :options="swiperOptions">
                         <swiper-slide v-for="(product, i) in products" :key="i">
                             <div class="swiper-slide">
-                                <div class="product">
-                                    <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
-                                    <div class="product-desc">
-                                        <h3>{{ product.name }}</h3>
-                                        <p>Description Lorem ipsum dolor</p>
-                                        <a href="#" class="text-main">View details 
-                                            <span class="ti-arrow-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
+                                <Product :product="product"/>
                             </div>
                         </swiper-slide>
                         <div class="swiper-button-prev" slot="button-prev"></div>
@@ -29,11 +20,13 @@
 </template>
 
 <script>
+import Product from '../components/Product.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 export default {
     components: {
+        Product,
         Swiper,
         SwiperSlide
     },

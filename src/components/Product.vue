@@ -44,13 +44,6 @@ export default {
         margin-bottom: .2rem;
     }
 
-    .product-desc h4 {
-        color: var(--main);
-        font-size: 1rem;
-        text-transform: capitalize;
-        margin-bottom: .2rem;
-    }
-
     .product-desc p {
         color: #333;
         font-size: .8rem;
@@ -64,13 +57,14 @@ export default {
         margin-bottom: bold;
     }
 
-  @media only screen and (min-width: 768px) {
-    .product {
-        margin-bottom: 1.3rem;
+    @media only screen and (min-width: 768px) {
+        .product {
+            margin-bottom: 1.3rem;
+        }
+        
+        .product-img {
+            height: 35vh;
+            margin-top: 0rem;
+        }
     }
-    .product-img {
-        height: 35vh;
-        margin-top: 0rem;
-    }
-  }
 </style>
