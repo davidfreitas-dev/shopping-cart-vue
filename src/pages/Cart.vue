@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import About from './template/About.vue'
+import About from '../template/About.vue'
 export default {
   components: {
     About,

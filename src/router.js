@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ProductsList from './components/ProductsList'
-import ProductDetails from './components/ProductDetails'
-import Cart from './components/Cart'
+import Products from './pages/Products'
+import Product from './pages/Product'
+import Cart from './pages/Cart'
 
 Vue.use(Router)
 
 export default new Router({
     routes: [{
         path: '/',
-        component: ProductsList
+        component: Products
     }, {
         path: '/product/:id',
-        component: ProductDetails
+        component: Product
     }, {
         path: '/cart',
         component: Cart

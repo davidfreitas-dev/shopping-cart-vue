@@ -68,9 +68,9 @@
 </template>
 
 <script>
-import SimilarProducts from './SimilarProducts.vue'
-import ProductDetailsImages from './ProductDetailsImages.vue'
-import About from './template/About.vue'
+import ProductDetailsImages from '../components/ProductImages.vue'
+import SimilarProducts from '../components/SimilarProducts.vue'
+import About from '../template/About.vue'
 
 export default {
 	components: {

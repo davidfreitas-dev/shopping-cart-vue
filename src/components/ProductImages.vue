@@ -42,7 +42,8 @@ export default {
                 slidesPerView: 3,
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
-            }
+            },
+            images: ['ssd-corsair.png', 'proc-intel.png', 'proc-intel.png']
         }
     },
     mounted() {
