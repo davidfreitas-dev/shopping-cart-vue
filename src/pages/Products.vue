@@ -7,16 +7,9 @@
 					<hr class="separator">
 				</div>
 				<div class="product-grid">
-					<div class="product" v-for="(product, i) in products" :key="i">
-            <router-link :to="`product/${product.id}`">
-              <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
-              <div class="product-desc">
-                <h3>{{ product.name }}</h3>
-                <p>Description Lorem ipsum dolor</p>
-                <h3 class="text-main">{{ product.price | formatValue }}</h3>
-              </div>
-            </router-link>
-					</div>
+          <template v-for="product in products">
+            <Product :product="product" :key="product.id"/>
+          </template>
 				</div>
 			</section>			
 		</div>
@@ -25,10 +18,11 @@
 </template>
 
 <script>
+import Product from '../components/Product.vue'
 import About from '../template/About.vue'
 export default {
 	components: {
-		About,
+		Product, About,
 	},
 	computed: {
 		products() {

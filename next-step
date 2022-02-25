@@ -1,1 +1,2 @@
 1. Criar action para validar se o produto ja esxiste no crrinho, se sim apenas alterar a quantidade
+2. Melhorar a componentização do projeto
