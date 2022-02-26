@@ -91,6 +91,12 @@ export default {
 			})
 		}
 	},
+	watch: {
+		$route(to, from) {
+			console.log(from)
+			this.id = to.params.id
+		}
+	},
 	methods: {
 		addItemQty() {
             this.qty++
