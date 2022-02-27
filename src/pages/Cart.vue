@@ -13,7 +13,7 @@
             <div class="cart-item" v-for="(product, i) in item.products" :key="i">						
               <div class="cart-product">
                 <router-link :to="`product/${product.id}`">
-                  <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
+                  <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.images[0]}`) + ')' }"></div>
                 </router-link>
                 <div class="cart-product-info">
                   <router-link :to="`product/${product.id}`">
