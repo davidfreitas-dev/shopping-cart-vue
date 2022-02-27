@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<div class="product-detail-grid" v-for="(detail, i) in product" :key="i">			
-			<ProductDetailsImages :image-url="detail.imageURL"/>
+			<ProductImages :images="detail.images"/>
 			<div class="wrapper product-description">
 				<h3>{{ detail.name }}</h3>
 				<div class="stars">
@@ -68,14 +68,14 @@
 </template>
 
 <script>
-import ProductDetailsImages from '../components/ProductImages.vue'
+import ProductImages from '../components/ProductImages.vue'
 import SimilarProducts from '../components/SimilarProducts.vue'
 import About from '../template/About.vue'
 
 export default {
 	components: {
 		SimilarProducts,
-		ProductDetailsImages,
+		ProductImages,
 		About
     },
 	data() {

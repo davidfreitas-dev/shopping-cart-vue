@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <router-link :to="`/product/${product.id}`">
-            <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.imageURL}`) + ')' }"></div>
+            <div class="product-img" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.images[0]}`) + ')' }"></div>
             <div class="product-desc">
                 <h3>{{ product.name }}</h3>
                 <p>Description Lorem ipsum dolor</p>

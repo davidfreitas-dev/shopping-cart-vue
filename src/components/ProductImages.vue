@@ -1,14 +1,14 @@
 <template>
     <div class="product-images wrapper">
         <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
-            <swiper-slide :style="{ backgroundImage: 'url(' + require(`@/assets/img/${imageUrl}`) + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-amd.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-corsair.png') + ')' }"></swiper-slide>
+            <template v-for="image in images">
+                <swiper-slide :style="{ backgroundImage: 'url(' + require(`@/assets/img/${image}`) + ')' }" :key="image.id"></swiper-slide>    
+            </template>
         </swiper>
         <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-            <swiper-slide :style="{ backgroundImage: 'url(' + require(`@/assets/img/${imageUrl}`) + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/proc-amd.png') + ')' }"></swiper-slide>
-            <swiper-slide :style="{ backgroundImage: 'url(' + require('@/assets/img/ssd-corsair.png') + ')' }"></swiper-slide>	
+            <template v-for="image in images">
+                <swiper-slide :style="{ backgroundImage: 'url(' + require(`@/assets/img/${image}`) + ')' }" :key="image.id"></swiper-slide>    
+            </template>
         </swiper>
     </div>
 </template>
@@ -19,8 +19,9 @@ import 'swiper/css/swiper.css'
 
 export default {
     props: {
-        imageUrl: {
-            type: String,
+        images: {
+            type: Array,
+            require: true
         },
     },
     components: {
@@ -42,8 +43,7 @@ export default {
                 slidesPerView: 3,
                 touchRatio: 0.2,
                 slideToClickedSlide: true,
-            },
-            images: ['ssd-corsair.png', 'proc-intel.png', 'proc-intel.png']
+            }
         }
     },
     mounted() {
