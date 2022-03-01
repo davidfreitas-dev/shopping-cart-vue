@@ -64,6 +64,7 @@
 		</section>
 		<SimilarProducts />
 		<About />
+		<ErrorMsg :error="error"/>
 	</main>
 </template>
 
@@ -71,17 +72,20 @@
 import ProductImages from '../components/ProductImages.vue'
 import SimilarProducts from '../components/SimilarProducts.vue'
 import About from '../template/About.vue'
+import ErrorMsg from '../components/ErrorMsg.vue'
 
 export default {
 	components: {
 		SimilarProducts,
 		ProductImages,
-		About
+		About,
+		ErrorMsg
     },
 	data() {
 		return {
 			id: this.$route.params.id,
-			qty: 1
+			qty: 1,
+			error: null
 		}
 	},
 	computed: {
@@ -107,10 +111,21 @@ export default {
             }
         },
 		addToCart() {
+			const cart = this.$store.state.cart[0].products
 			let product = this.product[0]
-			product.qty = this.qty
-			this.$store.commit('addToCart', product)
-			this.$router.push('/cart')
+			product.qty = this.qty			
+
+			if (cart.length > 0)
+				cart.filter(p => {
+					if (p.id !== product.id)
+						this.$store.commit('addToCart', product)
+					else
+						this.error = { status: true, msg: 'Este produto já foi adicionado. Apenas altere a quantidade no carrinho  ;)'}
+				})
+			else
+				this.$store.commit('addToCart', product)				
+				
+			//this.$router.push('/cart')			
 		}
 	},
 }
