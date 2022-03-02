@@ -47,9 +47,9 @@ export default {
         color: #fff;
         background-color: tomato;
         position: fixed;
-        width: 70%;
+        width: 85%;
         top: 13%;
-        left: 15%;
+        left: 7%;
         border-radius: 5px;
         box-shadow: 3px 3px 5px 0px #3c3c3c;
         z-index: 1;
@@ -65,5 +65,12 @@ export default {
         align-items: center;
         padding: .85rem;
         cursor: pointer;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .error-msg {
+            width: 70%;
+            left: 15%;
+        }
     }
 </style>
