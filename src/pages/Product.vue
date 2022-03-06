@@ -65,7 +65,6 @@
 		<SimilarProducts />
 		<About />
 		<ErrorMsg :error="error"/>
-		<SuccessMsg />
 	</main>
 </template>
 
@@ -74,15 +73,13 @@ import ProductImages from '../components/ProductImages.vue'
 import SimilarProducts from '../components/SimilarProducts.vue'
 import About from '../template/About.vue'
 import ErrorMsg from '../components/ErrorMsg.vue'
-import SuccessMsg from '../components/SuccessMsg.vue'
 
 export default {
 	components: {
 		SimilarProducts,
 		ProductImages,
 		About,
-		ErrorMsg,
-		SuccessMsg
+		ErrorMsg
     },
 	data() {
 		return {
