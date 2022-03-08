@@ -4,14 +4,13 @@
       <Breadcrumb :page-title="pageTitle"/>
       <div class="checkout">
         <div class="form-checkout">
-          <input type="text" name="zipcode" placeholder="zipcode"/>
-          <input type="text" name="address" placeholder="address"/>
-          <input type="text" name="number" placeholder="number"/>
-          <input type="text" name="complement" placeholder="complement"/>
-          <input type="text" name="neighborhood" placeholder="neighborhood"/>
-          <input type="text" name="city" placeholder="city"/>
-          <input type="text" name="state" placeholder="state"/>
-          <input type="text" name="country" placeholder="country"/>
+          <input type="text" name="zipcode" placeholder="zipcode" v-model="zipcode" @keyup="searchZipcode()"/>
+          <input type="text" name="address" :value="data.logradouro" placeholder="address"/>
+          <input type="text" name="number" :value="data.numero" placeholder="number"/>
+          <input type="text" name="complement" :value="data.complemento" placeholder="complement"/>
+          <input type="text" name="neighborhood" :value="data.bairro" placeholder="neighborhood"/>
+          <input type="text" name="city" :value="data.localidade" placeholder="city"/>
+          <input type="text" name="state" :value="data.uf" placeholder="state"/>
         </div>
         <Summary />
       </div>
@@ -34,8 +33,20 @@ export default {
   data() {
     return {
       pageTitle: 'Checkout',
+      zipcode : null,
+      data : '',
+      message: null
     }
   },
+  methods : {
+		searchZipcode () {
+			if(this.zipcode.length == 8) {
+				this.$http.get(`https://viacep.com.br/ws/${ this.zipcode }/json/`)
+				.then( response => this.data = response.data )
+				.catch( error => console.log(error) )
+			}
+		}
+	}
 }
 </script>
 
