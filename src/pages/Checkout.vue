@@ -1,10 +1,7 @@
 <template>
   <main>
     <div class="wrapper">
-      <div class="section-info">
-        <h3>Checkout</h3>
-        <hr class="separator">
-      </div>
+      <Breadcrumb :page-title="pageTitle"/>
       <div class="checkout">
         <div class="form-checkout">
           <input type="text" name="zipcode" placeholder="zipcode"/>
@@ -24,13 +21,20 @@
 </template>
 
 <script>
+import Breadcrumb from '../components/Breadcrumb.vue'
 import Summary from '../components/Summary.vue'
 import About from '../template/About.vue'
 
 export default {
   components: {
     About,
-    Summary
+    Summary,
+    Breadcrumb
+  },
+  data() {
+    return {
+      pageTitle: 'Checkout',
+    }
   },
 }
 </script>

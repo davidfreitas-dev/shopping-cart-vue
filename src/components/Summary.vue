@@ -70,7 +70,7 @@ export default {
   text-transform: uppercase;
   width: 100%;
   padding: .85rem 0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background-color: var(--main);
   cursor: pointer;
 }

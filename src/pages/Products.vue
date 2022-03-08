@@ -2,10 +2,7 @@
 	<main>
 		<div class="wrapper">
 			<section class="best-sellers" id="best-sellers">
-				<div class="section-info">
-					<h3>Best Products</h3>
-					<hr class="separator">
-				</div>
+				<Breadcrumb :page-title="pageTitle"/>
 				<div class="product-grid">
           <template v-for="product in products">
             <Product :product="product" :key="product.id"/>
@@ -18,29 +15,29 @@
 </template>
 
 <script>
+import Breadcrumb from '../components/Breadcrumb.vue'
 import Product from '../components/Product.vue'
 import About from '../template/About.vue'
 export default {
 	components: {
-		Product, About,
+		Breadcrumb, Product, About,
 	},
 	computed: {
 		products() {
 			return this.$store.state.products
 		}
-	}
+	},
+  data() {
+    return {
+      pageTitle: 'Best Products'
+    }
+  },
 }
 </script>
 
 <style>
   main {
     margin-top: 65px;
-  }
-
-  .separator {
-    border: 3px solid var(--main);
-    width: 3rem;
-    margin-bottom: 1.5rem;
   }
 
   .product-grid {
