@@ -83,6 +83,12 @@ export default {
   }
 
   .form-checkout {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .form-checkout {
     width: 60%;
   }
 }

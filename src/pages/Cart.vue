@@ -59,7 +59,7 @@
 					</div>
 					<div class="cart-action-button">
 						<router-link to="/">Continue Shopping</router-link>
-						<a class="btn-main">Proceed to Checkout</a>
+						<router-link to="/checkout" class="btn-main">Proceed to Checkout</router-link>
 					</div>
 				</div>
 			</div>

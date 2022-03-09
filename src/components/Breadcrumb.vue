@@ -29,6 +29,7 @@ export default {
 	font-size: 2rem;
 	color: #333;
 }
+
 .breadcrumb-separator {
     border: 3px solid var(--main);
     width: 3rem;

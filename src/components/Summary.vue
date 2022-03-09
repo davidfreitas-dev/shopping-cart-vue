@@ -2,22 +2,12 @@
     <div class="summary">
         <div class="summary-items">
             <span class="title">Summary</span>
-            <div class="item">
-              <p>Processor Intel</p>
-              <span>$300.00</span>
-            </div>
-            <div class="item">
-              <p>AMD Processor</p>
-              <span>$200.00</span>
-            </div>
-            <div class="item">
-              <p>Motherboard</p>
-              <span>$600.00</span>
-            </div>
-            <div class="item">
-              <p>SSD Corsair</p>
-              <span>$150.00</span>
-            </div>
+            <template v-for="(product, i) in cart.products">
+              <div class="item" :key="i">
+                <p>{{ product.name }} <small>x {{ product.qty }}</small></p>
+                <span>{{ product.total | formatValue }}</span>
+              </div>
+            </template>
         </div>
         <div class="summary-actions">
             <button>Finish</button>
@@ -27,7 +17,19 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      cart: null
+    }
+  },
+  methods: {
+    loadData() {
+      this.cart = this.$store.state.cart[0]
+    }
+  },
+  created () {
+    this.loadData();
+  },
 }
 </script>
 
@@ -60,6 +62,12 @@ export default {
   font-weight: 600;
 }
 
+.item small {
+  color: var(--main);
+  font-weight: 600;
+  padding-right: .25rem;
+}
+
 .summary-actions button {
   outline: none;
   border: none;
@@ -81,12 +89,18 @@ export default {
 
 @media only screen and (min-width: 768px) {
   .summary {
-    width: 40%;
+    width: 50%;
     margin: 0 .5rem;
   }
 
   .summary-actions button {
     margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .summary {
+    width: 40%;
   }
 }
 </style>

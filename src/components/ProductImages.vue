@@ -85,6 +85,7 @@ export default {
         width: 25%;
         height: 100%;
     }
+    
     .gallery-thumbs .swiper-slide-active {
         opacity: 1;
     }
