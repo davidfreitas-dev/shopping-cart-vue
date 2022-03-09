@@ -18,7 +18,7 @@
 				</div>
 				<div class="cart">
           <router-link to="/cart"><span class="ti-shopping-cart"></span></router-link>
-					<span class="cart-count"><span class="text-main">{{ cartQtyItems }}</span></span>					
+					<span class="cart-count"><div class="text-main">{{ cartQtyItems }}</div></span>					
 				</div>			
 			</nav>
 		</div>
@@ -96,14 +96,18 @@ export default {
     display: flex;
   }
 
-  .cart-count span {
-    padding: 0 5px;
-    border-radius: 100%;
+  .cart-count div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    font-weight: bold;
+    font-size: .7rem !important;
     color: #fff !important;
     background-color: var(--main);
-    font-size: .7rem !important;
-    font-weight: bold;
-    align-self: flex-start;
+    border-radius: 100%;
   }
 
   @media only screen and (min-width: 768px) {
