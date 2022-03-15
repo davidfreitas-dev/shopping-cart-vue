@@ -20,7 +20,7 @@
                     <p class="cart-product-name">{{ product.name }}</p>
                   </router-link>
                   <p class="cart-price-sm">{{ product.price | formatValue }}</p>
-                  <small>x {{ product.qty }}</small>
+                  <small>x {{ product.quantity }}</small>
                   <div class="remove" @click="removeItemCart(product.id)">
                     <span class="ti-trash"></span> Remove
                   </div>
@@ -29,7 +29,7 @@
               <div class="cart-quantity-md">
                 <div class="cart-quantity-controls">
                   <button @click="reduceItemQty(product.id)">-</button>
-                  <input type="number" :value="product.qty" readonly />
+                  <input type="number" :value="product.quantity" readonly />
                   <button @click="addItemQty(product.id)">+</button>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="cart-quantity-controls-sm">
                   <button @click="reduceItemQty(product.id)">-</button>
-                  <input type="number" :value="product.qty" readonly />
+                  <input type="number" :value="product.quantity" readonly />
                   <button @click="addItemQty(product.id)">+</button>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default {
     },
     calcTotalItem() {
       this.cart[0].products.map(p => {
-        const totalItem = p.qty * p.price
+        const totalItem = p.quantity * p.price
         this.$set(p, 'total', totalItem)
       })
     },

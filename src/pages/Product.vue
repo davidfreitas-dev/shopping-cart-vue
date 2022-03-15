@@ -1,9 +1,9 @@
 <template>
 	<main>
-		<div class="product-detail-grid" v-for="(detail, i) in product" :key="i">			
-			<ProductImages :images="detail.images"/>
+		<div class="product-detail-grid">			
+			<ProductImages :images="product.images"/>
 			<div class="wrapper product-description">
-				<h3>{{ detail.name }}</h3>
+				<h3>{{ product.name }}</h3>
 				<div class="stars">
 					<span class="star-icon full">☆</span>
 					<span class="star-icon full">☆</span>
@@ -13,7 +13,7 @@
 				</div>
 				<div class="sale-info">
 					<small class="sale bg-main">SALE</small>
-					<span class="price text-main">{{ detail.price | formatValue }}</span>
+					<span class="price text-main">{{ product.price | formatValue }}</span>
 				</div>
 				<p class="short-describe">
 					Lorem ipsum condimentum mollis pulvinar phasellus fusce sodales.
@@ -21,8 +21,8 @@
 				<div class="product-action-button small">
 					<div class="quantity-controls">
 						<button @click="reduceItemQty">-</button>
-						<input type="number" v-model="qty" readonly="">
-						<button @click="addItemQty">+</button>
+						<input type="number" v-model="quantity" readonly="">
+						<button @click="quantity++">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main" @click="addToCart">
@@ -34,8 +34,8 @@
 				<div class="product-action-button large">
 					<div class="quantity-controls">
 						<button @click="reduceItemQty">-</button>
-						<input type="number" v-model="qty" readonly="">
-						<button @click="addItemQty">+</button>
+						<input type="number" v-model="quantity" readonly="">
+						<button @click="quantity++">+</button>
 					</div>
 					<div class="tocart-control">
 						<button class="btn-main" @click="addToCart">
@@ -88,54 +88,31 @@ export default {
     },
 	data() {
 		return {
-			id: this.$route.params.id,
-			qty: 1,
+			productId: this.$route.params.id,
+			quantity: 1,
 			error: null
 		}
 	},
 	computed: {
 		product() {
-			return this.$store.state.products.filter(p => {
-				return p.id == this.id
-			})
+			return this.$store.getters.product(this.productId)
 		}
 	},
 	watch: {
 		$route(to, from) {
 			console.log(from)
-			this.id = to.params.id
+			this.productId = to.params.id
 		}
 	},
 	methods: {
-		addItemQty() {
-            this.qty++
-        },
         reduceItemQty() {
-            if (this.qty > 1) {
-                this.qty--
+            if (this.quantity > 1) {
+                this.quantity--
             }
         },
 		addToCart() {
-			const cart = this.$store.state.cart[0].products
-			let product = this.product[0]
-			product.qty = this.qty			
-
-			if (cart.length > 0) {
-				const hasProduct = cart.filter(p => {
-					return p.id === product.id
-				})
-				
-				if (hasProduct.length <= 0) {
-					this.$store.commit('addToCart', product)
-					this.$router.push('/cart')
-					return
-				}
-
-				this.error = { status: true, msg: 'Este produto já foi adicionado. Apenas altere a quantidade no carrinho  ;)' }
-			} else {			
-				this.$store.commit('addToCart', product)
-				this.$router.push('/cart')
-			}	
+			this.product.quantity = this.quantity
+			this.$store.dispatch('addToCart', this.product)
 		}
 	},
 }

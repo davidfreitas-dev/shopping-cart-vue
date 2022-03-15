@@ -14,23 +14,34 @@ export default new Vuex.Store({
             { id: 6, name: 'Personal Gamer Computer', images: ['gamer-pc.png', 'kit-gamer.png', 'motherboard.png' ], price: 3500.00 },
         ],
         cart: [
-            {
-                products: []
-            }
+            { products: [] }
         ]
+    },
+    getters: {
+        products(state) {
+            return state.products
+        },
+        product(state) {
+            return (productId) => {
+                return state.products.find(product => product.id == productId)
+            }
+        },
+        cart(state) {
+            return state.cart
+        }
     },
     mutations: {
         addItemQty(state, itemId) {
             state.cart[0].products.filter(item => {
                 if (item.id == itemId) {
-                    item.qty++
+                    item.quantity++
                 }
             })
         },
         reduceItemQty(state, itemId) {
             state.cart[0].products.filter(item => {
-                if (item.id == itemId && item.qty > 1) {
-                    item.qty--
+                if (item.id == itemId && item.quantity > 1) {
+                    item.quantity--
                 }
             })
         },
@@ -42,9 +53,17 @@ export default new Vuex.Store({
             state.cart[0].products.push(product)
         },
         removeItemCart(state, productId) {
+            // Remover item usando o splice
             state.cart[0].products = state.cart[0].products.filter(p => {
                 return p.id != productId
             })
+        }
+    },
+    actions: {
+        addToCart({ commit, getters }, product) {
+            if (!getters.cart[0].products.includes(product)) {
+                commit('addToCart', product)
+            }
         }
     }
 })
