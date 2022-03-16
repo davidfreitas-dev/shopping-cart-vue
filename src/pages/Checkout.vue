@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Breadcrumb from '../components/Breadcrumb.vue'
+import Breadcrumb from '../template/Breadcrumb.vue'
 import Summary from '../components/Summary.vue'
 import About from '../template/About.vue'
 
