@@ -52,16 +52,17 @@ export default new Vuex.Store({
 
             state.cart[0].products.push(product)
         },
-        removeItemCart(state, productId) {
-            // Remover item usando o splice
-            state.cart[0].products = state.cart[0].products.filter(p => {
-                return p.id != productId
-            })
+        removeItemCart(state, index) {
+            state.cart[0].products.splice(index, 1)
         }
     },
     actions: {
         addToCart({ commit }, product) {
             commit('addToCart', product)
+        },
+        removeItemCart({ commit, getters }, product) {
+            const index = getters.cart[0].products.indexOf(product)
+            commit('removeItemCart', index)
         }
     }
 })

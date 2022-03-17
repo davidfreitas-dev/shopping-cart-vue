@@ -20,7 +20,7 @@
                   </router-link>
                   <p class="cart-price-sm">{{ product.price | formatValue }}</p>
                   <small>x {{ product.quantity }}</small>
-                  <div class="remove" @click="removeItemCart(product.id)">
+                  <div class="remove" @click="removeItemCart(product)">
                     <span class="ti-trash"></span> Remove
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                 <h4>{{ product.total | formatValue }}</h4>
               </div>
               <div class="cart-controls-sm">
-                <div class="remove-sm" @click="removeItemCart(product.id)">
+                <div class="remove-sm" @click="removeItemCart(product)">
                   <span class="ti-trash"></span> Remove
                 </div>
                 <div class="cart-quantity-controls-sm">
@@ -102,8 +102,8 @@ export default {
       this.$store.commit('reduceItemQty', itemId)
       this.loadData()
     },
-    removeItemCart(productId) {
-      this.$store.commit('removeItemCart', productId)
+    removeItemCart(product) {
+      this.$store.dispatch('removeItemCart', product)
       this.loadData()
     }
   },
