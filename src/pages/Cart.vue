@@ -9,8 +9,7 @@
 						<p>Unit Price</p>
 						<p>Total</p>
 					</div>
-          <template v-for="item in cart">
-            <div class="cart-item" v-for="(product, i) in item.products" :key="i">						
+            <div class="cart-item" v-for="(product, i) in cart.products" :key="i">						
               <div class="cart-product">
                 <router-link :to="`product/${product.id}`">
                   <div class="cart-image" :style="{ backgroundImage: 'url(' + require(`@/assets/img/${product.images[0]}`) + ')' }"></div>
@@ -50,7 +49,6 @@
                 </div>
               </div>
             </div>
-          </template>
 				</div>				
 				<div class="cart-total-holder">
 					<div class="cart-total">
@@ -82,18 +80,18 @@ export default {
   },
   methods: {
     loadData() {
-      this.cart = this.$store.state.cart
+      this.cart = this.$store.getters.cart[0]
       this.calcTotalItem()
       this.calcTotalCart()
     },
     calcTotalItem() {
-      this.cart[0].products.map(p => {
+      this.cart.products.map(p => {
         const totalItem = p.quantity * p.price
         this.$set(p, 'total', totalItem)
       })
     },
     calcTotalCart() {  
-      this.cartTotal = this.cart[0].products.map(item => item.qty * item.price)
+      this.cartTotal = this.cart.products.map(item => item.quantity * item.price)
         .reduce((total, current) => total + current, 0)
     },
     addItemQty(itemId) {

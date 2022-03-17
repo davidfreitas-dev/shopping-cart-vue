@@ -23,17 +23,15 @@ export default {
         }
     },
     methods: {
-        hideErrorMsg() {
-            this.visibility = false
-        }
-    },
-    watch: {
-        error() {
+        showErrorMsg() {
             if (this.error.status) {
                 this.visibility = true
             }
+        },
+        hideErrorMsg() {
+            this.visibility = false
         }
-    },
+    }
 }
 </script>
 

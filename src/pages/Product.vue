@@ -69,7 +69,7 @@
 		</section>
 		<SimilarProducts />
 		<About />
-		<ErrorMsg :error="error"/>
+		<ErrorMsg ref="error" :error="error"/>
 	</main>
 </template>
 
@@ -117,6 +117,7 @@ export default {
 			if (this.cart.products.includes(this.product)) {
 				this.error.status = true
 				this.error.msg = 'Este produto já está no carrinho. Lá você pode alterar a quantidade ;)'
+				this.$refs.error.showErrorMsg()
 				return
 			}
 
