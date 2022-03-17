@@ -123,6 +123,7 @@ export default {
 
 			this.product.quantity = this.quantity
 			this.$store.dispatch('addToCart', this.product)
+			this.$router.push('/cart')
 		}
 	},
 }

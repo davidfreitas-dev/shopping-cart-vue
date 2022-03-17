@@ -4,7 +4,7 @@
             <span class="title">Summary</span>
             <template v-for="(product, i) in cart.products">
               <div class="item" :key="i">
-                <p>{{ product.name }} <small>x {{ product.qty }}</small></p>
+                <p>{{ product.name }} <small>x {{ product.quantity }}</small></p>
                 <span>{{ product.total | formatValue }}</span>
               </div>
             </template>
