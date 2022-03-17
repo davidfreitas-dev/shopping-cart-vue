@@ -90,12 +90,15 @@ export default {
 		return {
 			productId: this.$route.params.id,
 			quantity: 1,
-			error: null
+			error: {}
 		}
 	},
 	computed: {
 		product() {
 			return this.$store.getters.product(this.productId)
+		},
+		cart() {
+			return this.$store.getters.cart[0]
 		}
 	},
 	watch: {
@@ -111,6 +114,12 @@ export default {
             }
         },
 		addToCart() {
+			if (this.cart.products.includes(this.product)) {
+				this.error.status = true
+				this.error.msg = 'Este produto já está no carrinho. Lá você pode alterar a quantidade ;)'
+				return
+			}
+
 			this.product.quantity = this.quantity
 			this.$store.dispatch('addToCart', this.product)
 		}

@@ -60,10 +60,8 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        addToCart({ commit, getters }, product) {
-            if (!getters.cart[0].products.includes(product)) {
-                commit('addToCart', product)
-            }
+        addToCart({ commit }, product) {
+            commit('addToCart', product)
         }
     }
 })
