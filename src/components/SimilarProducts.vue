@@ -56,14 +56,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 	.similar-products {
 		padding-bottom: 1.5rem;
 	}
 
 	.similar-products h3 {
-		margin-bottom: .85rem;
 		color: #333;
+        font-size: 1.75rem;
+        text-align: center;
+		padding-top: 1rem;
+		padding-bottom: 1.5rem;
 	}
 
 	.swiper-button-next:after,

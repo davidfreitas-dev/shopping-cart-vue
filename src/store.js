@@ -13,9 +13,9 @@ export default new Vuex.Store({
             { id: 5, name: 'Kingston Hyper X RAM Memory 8GB', images: ['ram-memory.png', 'motherboard.png', 'ssd-corsair.png'], price: 200.00 },
             { id: 6, name: 'Personal Gamer Computer', images: ['gamer-pc.png', 'kit-gamer.png', 'motherboard.png' ], price: 3500.00 },
         ],
-        cart: [
-            { products: [] }
-        ]
+        cart: {
+            products: []
+        }
     },
     getters: {
         products(state) {
@@ -32,36 +32,34 @@ export default new Vuex.Store({
     },
     mutations: {
         addItemQty(state, itemId) {
-            state.cart[0].products.filter(item => {
+            state.cart.products.filter(item => {
                 if (item.id == itemId) {
                     item.quantity++
                 }
             })
         },
         reduceItemQty(state, itemId) {
-            state.cart[0].products.filter(item => {
+            state.cart.products.filter(item => {
                 if (item.id == itemId && item.quantity > 1) {
                     item.quantity--
                 }
             })
         },
         addToCart(state, product) {
-            if (!product) {
-                return
-            }
-
-            state.cart[0].products.push(product)
+            state.cart.products.push(product)
         },
         removeItemCart(state, index) {
-            state.cart[0].products.splice(index, 1)
+            state.cart.products.splice(index, 1)
         }
     },
     actions: {
         addToCart({ commit }, product) {
-            commit('addToCart', product)
+            if (product) {
+                commit('addToCart', product)
+            }
         },
         removeItemCart({ commit, getters }, product) {
-            const index = getters.cart[0].products.indexOf(product)
+            const index = getters.cart.products.indexOf(product)
             commit('removeItemCart', index)
         }
     }

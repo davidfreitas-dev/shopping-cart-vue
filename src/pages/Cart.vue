@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     loadData() {
-      this.cart = this.$store.getters.cart[0]
+      this.cart = this.$store.getters.cart
       this.calcTotalItem()
       this.calcTotalCart()
     },

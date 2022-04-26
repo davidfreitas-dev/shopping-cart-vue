@@ -98,7 +98,7 @@ export default {
 			return this.$store.getters.product(this.productId)
 		},
 		cart() {
-			return this.$store.getters.cart[0]
+			return this.$store.getters.cart
 		}
 	},
 	watch: {
@@ -114,7 +114,7 @@ export default {
             }
         },
 		addToCart() {
-			if (this.cart.products.includes(this.product)) {
+			if (this.cart.products && this.cart.products.includes(this.product)) {
 				
 				this.toastData = {
 					status: true,
@@ -143,7 +143,7 @@ export default {
 	}
 	
 	.product-description h3 {
-		font-size: 2.3rem !important;
+		font-size: 2rem !important;
 		margin-bottom: .7rem;
 		color: #333;
 		text-transform: capitalize;
@@ -240,15 +240,13 @@ export default {
 
 	.long-describe {
 		border-bottom: 1px solid #ccc;
-		padding-bottom: 1rem;
+		padding: .5rem;
 	}
 
 	.long-describe h3 {
-		text-align: center;
+		text-align: left;
 		font-size: 1.5rem;
-		padding: .7rem 0rem;
 		margin-bottom: .8rem;
-		margin-top: 1rem;
 	}
 
 	.long-describe p {

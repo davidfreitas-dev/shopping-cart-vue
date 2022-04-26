@@ -29,7 +29,7 @@
 export default {
   computed: {
     cartQtyItems() {
-      return this.$store.state.cart[0].products.length 
+      return this.$store.getters.cart.products ? this.$store.getters.cart.products.length : 0 
     }
   },
 }
