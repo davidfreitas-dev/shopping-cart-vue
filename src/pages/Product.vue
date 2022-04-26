@@ -21,7 +21,7 @@
 				<div class="product-action-button small">
 					<div class="quantity-controls">
 						<button @click="reduceItemQty">-</button>
-						<input type="number" v-model="quantity" readonly="">
+						<div>{{ quantity }}</div>
 						<button @click="quantity++">+</button>
 					</div>
 					<div class="tocart-control">
@@ -34,7 +34,7 @@
 				<div class="product-action-button large">
 					<div class="quantity-controls">
 						<button @click="reduceItemQty">-</button>
-						<input type="number" v-model="quantity" readonly="">
+						<div>{{ quantity }}</div>
 						<button @click="quantity++">+</button>
 					</div>
 					<div class="tocart-control">
@@ -130,10 +130,6 @@ export default {
 </script>
 
 <style>
-	.product-detail-grid {
-		padding-top: 1rem;
-	}
-
 	.product-description {
 		margin: .5rem;
 	}
@@ -169,7 +165,6 @@ export default {
 	.product-action-button {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 2rem;
 		overflow-x: hidden;
 	}
 
@@ -183,32 +178,30 @@ export default {
 
 	.quantity-controls {
 		display: flex;
-		border: 2px solid #ccc;
-		border-radius: 5px;
+		justify-content: center;
+		align-items: center;
 	}
 
-	.quantity-controls button,
-	.quantity-controls input {
+	.quantity-controls div {
 		width: 45px;
-		height: 35px;
-		border: none;
-		outline: none;
-		background: none;
-		font-size: 1.1rem;
-		text-align: center;
+		font-size: 1.35rem;
 		font-weight: bold;
+		text-align: center;
+		padding: 0 .75rem;
 		color: #505050;
 	}
 
-	.quantity-controls button:first-child {
-		border-right: 2px solid #ccc;
-		font-size: 1.4rem;
-		cursor: pointer;
-	}
-
-	.quantity-controls button:last-child {
-		border-left: 2px solid #ccc;
-		font-size: 1.4rem;
+	.quantity-controls button {
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: bold;
+		text-align: center;
+		width: 30px;
+		height: 30px;
+		border: none;
+		outline: none;
+		border-radius: 15px;
+		background-color: var(--main);
 		cursor: pointer;
 	}
 
@@ -218,10 +211,11 @@ export default {
 	}
 
 	.tocart-control button {
+		width: 100%;
 		height: 40px;
-		padding: .3rem 1.3rem;
+		font-size: .95rem !important;
 		text-transform: uppercase;
-		font-size: 1rem;
+		padding: .3rem 1.3rem;
 		cursor: pointer;
 	}
 
@@ -298,6 +292,10 @@ export default {
 
 		.star-icon {
 			font-size: 1.8rem;
+		}
+
+		.tocart-control button {
+			width: 200px;
 		}
 	}
 
