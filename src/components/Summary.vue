@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     loadData() {
-      this.cart = this.$store.state.cart[0]
+      this.cart = this.$store.state.cart
     }
   },
   created () {

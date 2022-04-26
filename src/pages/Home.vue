@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import Breadcrumb from '../template/Breadcrumb.vue'
+import Breadcrumb from '../components/template/Breadcrumb.vue'
 import Product from '../components/Product.vue'
-import About from '../template/About.vue'
+import About from '../components/template/About.vue'
 export default {
 	components: {
 		Breadcrumb, Product, About,

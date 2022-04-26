@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Products from './pages/Products'
+import Home from './pages/Home'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
@@ -13,7 +13,7 @@ export default new Router({
     },
     routes: [{
         path: '/',
-        component: Products
+        component: Home
     }, {
         path: '/product/:id',
         component: Product

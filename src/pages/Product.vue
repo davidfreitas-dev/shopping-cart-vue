@@ -76,7 +76,7 @@
 <script>
 import ProductImages from '../components/ProductImages.vue'
 import SimilarProducts from '../components/SimilarProducts.vue'
-import About from '../template/About.vue'
+import About from '../components/template/About.vue'
 import ToastMessage from '../components/ToastMessage.vue'
 
 export default {
