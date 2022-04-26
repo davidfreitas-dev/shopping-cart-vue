@@ -19,7 +19,6 @@
                     <p class="cart-product-name">{{ product.name }}</p>
                   </router-link>
                   <p class="cart-price-sm">{{ product.price | formatValue }}</p>
-                  <small>x {{ product.quantity }}</small>
                   <div class="remove" @click="removeItemCart(product)">
                     <span class="ti-trash"></span> Remove
                   </div>
@@ -138,7 +137,7 @@ export default {
     display: grid;
     grid-template-columns: 80px auto;
     grid-gap: 0rem 1.3rem;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   .cart-image {
@@ -217,11 +216,6 @@ export default {
     margin-bottom: .3rem;
   }
 
-  .cart-product-info small {
-    font-weight: bold;
-    color: #333;
-  }
-
   .cart-total-holder {
     margin-top: 1.5rem;
   }
@@ -287,13 +281,10 @@ export default {
     }
 
     .cart-product {
-      border: none;
       flex: 1;
       align-items: center;
-    }
-
-    .cart-product small {
-      display: none;
+      border: none;
+      padding: 1rem 0;
     }
     
     .product-cart {

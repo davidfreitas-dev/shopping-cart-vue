@@ -5,7 +5,7 @@
             <template v-for="(product, i) in cart.products">
               <div class="item" :key="i">
                 <p>{{ product.name }} <small>x {{ product.quantity }}</small></p>
-                <span>{{ product.total | formatValue }}</span>
+                <div>{{ product.total | formatValue }}</div>
               </div>
             </template>
         </div>
@@ -41,11 +41,12 @@ export default {
   align-items: left;
   margin: 1rem .5rem;
   padding: 1.3rem;
+  border-radius: 5px;
   border: 1px solid #c3c3c3;
 }
 
 .summary-items .title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -57,9 +58,9 @@ export default {
   border-bottom: 1px solid #c3c3c3;
 }
 
-.item span {
-  font-size: 1.1rem;
-  font-weight: 600;
+.item p {
+  font-size: .85rem;
+  padding: .5rem 0;
 }
 
 .item small {
@@ -68,18 +69,28 @@ export default {
   padding-right: .25rem;
 }
 
+.item div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
 .summary-actions button {
-  outline: none;
-  border: none;
+  width: 100%;
+  height: 45px;
   color: #fff;
-  font-size: 1.3rem;
+  margin: 1rem 0;
+  font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: .05rem;
   text-transform: uppercase;
-  width: 100%;
-  padding: .85rem 0;
-  margin-top: 2rem;
+  border-radius: 5px;
   background-color: var(--main);
+  outline: none;
+  border: none;
   cursor: pointer;
 }
 

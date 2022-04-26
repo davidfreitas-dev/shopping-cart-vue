@@ -49,7 +49,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: .75rem 2rem;
     width: 100%;
   }
 
@@ -102,7 +102,7 @@ export default {
     align-items: center;
     width: 20px;
     height: 20px;
-    margin-top: -10px;
+    margin-top: -5px;
     font-weight: bold;
     font-size: .7rem !important;
     color: #fff !important;
