@@ -1,5 +1,5 @@
 <template>
-  <div class="toast-msg animate__animated animate__bounceInDown" :class="data.color" v-if="visibility">
+  <div class="toast-msg animate__animated animate__fadeInDown" :class="data.color" v-if="visibility">
         <span class="msg">
             <strong>Ops:</strong> {{ data.msg }}
         </span>
@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style scoped>
+    .animate__animated.animate__fadeInDown {
+        --animate-duration: .35s;
+    }
+    
     .toast-msg {
         position: fixed;
         width: 85%;
