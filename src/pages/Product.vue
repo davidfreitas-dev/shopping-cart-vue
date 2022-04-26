@@ -69,7 +69,7 @@
 		</section>
 		<SimilarProducts />
 		<About />
-		<ErrorMsg ref="error" :error="error"/>
+		<ToastMessage ref="toast" :data="toastData"/>
 	</main>
 </template>
 
@@ -77,20 +77,20 @@
 import ProductImages from '../components/ProductImages.vue'
 import SimilarProducts from '../components/SimilarProducts.vue'
 import About from '../template/About.vue'
-import ErrorMsg from '../components/ErrorMsg.vue'
+import ToastMessage from '../components/ToastMessage.vue'
 
 export default {
 	components: {
 		SimilarProducts,
 		ProductImages,
 		About,
-		ErrorMsg
+		ToastMessage
     },
 	data() {
 		return {
 			productId: this.$route.params.id,
 			quantity: 1,
-			error: {}
+			toastData: {}
 		}
 	},
 	computed: {
@@ -115,9 +115,17 @@ export default {
         },
 		addToCart() {
 			if (this.cart.products.includes(this.product)) {
-				this.error.status = true
-				this.error.msg = 'Este produto já está no carrinho. Lá você pode alterar a quantidade ;)'
-				this.$refs.error.showErrorMsg()
+				
+				this.toastData = {
+					status: true,
+					msg: 'Este produto já está no carrinho. Lá você pode alterar a quantidade ;)',
+					color: 'error'
+				}
+
+				this.$nextTick(() => {
+					this.$refs.toast.handleShow()
+				})
+				
 				return
 			}
 
@@ -143,7 +151,7 @@ export default {
 
 	.product-description .sale-info {
 		display: flex;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
 	}
 

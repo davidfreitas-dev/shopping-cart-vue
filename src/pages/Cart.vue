@@ -138,7 +138,7 @@ export default {
     display: grid;
     grid-template-columns: 80px auto;
     grid-gap: 0rem 1.3rem;
-    padding: 1rem 1rem;
+    padding: 1rem 0;
   }
 
   .cart-image {
@@ -161,6 +161,7 @@ export default {
   }
 
   .remove-sm {
+    font-size: .9rem;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -222,7 +223,7 @@ export default {
   }
 
   .cart-total-holder {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 
   .cart-total {
@@ -232,8 +233,7 @@ export default {
   }
 
   .cart-total p {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: bold;
   }
 
@@ -246,7 +246,7 @@ export default {
     display: block;
     text-align: center;
     font-weight: 600;
-    padding: .7rem;
+    padding: .35rem;
     margin-bottom: .5rem;
     border: 4px solid var(--dark);
     border-radius: 5px;
@@ -345,8 +345,9 @@ export default {
 
     .cart-quantity-controls-sm input,
     .cart-quantity-controls input {
-      margin-left: .85rem;
-      width: 45px;
+      width: 40px;
+      text-align: center;
+      margin-left: .5rem;
     }
 
     .cart-price-sm {
@@ -355,6 +356,7 @@ export default {
 
     .remove {
       display: block;
+      font-size: .9rem;
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;

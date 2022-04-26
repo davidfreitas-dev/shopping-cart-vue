@@ -57,7 +57,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 10px 9px -7px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 5px -7px rgba(0,0,0,0.25);
   }
 
   .brand a{
